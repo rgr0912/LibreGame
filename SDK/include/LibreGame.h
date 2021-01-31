@@ -1,6 +1,7 @@
-#include "Ogre"
+#include "lgOgre.h"
 
-class LireGame(){
+class LibreGame : public lgOgre{
     public:
     LibreGame();
-}
+    void initApp();
+};

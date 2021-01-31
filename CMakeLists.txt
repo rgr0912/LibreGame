@@ -5,3 +5,5 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/Base/ogre-master)
 add_subdirectory(${PROJECT_SOURCE_DIR}/SDK)
 
 add_executable(GameApp GameApp/src/main.cpp) 
+
+target_include_directories(GameApp PUBLIC ${CMAKE_SOURCE_DIR}/include)
