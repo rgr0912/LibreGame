@@ -31,6 +31,20 @@ struct OgreAndroidBridge
                 }
             }
             break;
+            case APP_CMD_TERM_WINDOW:
+                if(AndroidApp.getRenderWindow())
+                    AndroidApp.getRenderWindow()->_notifySurfaceDestroyed();
+                break;
+            case APP_CMD_RESUME:
+                if(AndroidApp.getRenderWindow())
+                    AndroidApp.getRenderWindow()->setVisible(true);
+                break;
+            case APP_CMD_PAUSE:
+                if(AndroidApp.getRenderWindow())
+                    AndroidApp.getRenderWindow()->setVisible(false);
+                break;
+            case APP_CMD_CONFIG_CHANGED:
+                break;
         }
     }
 

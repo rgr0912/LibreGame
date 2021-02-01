@@ -1,40 +1,29 @@
 #include "Ogre.h"
+#include "OgreFileSystemLayer.h"
+#include "OgreConfigPaths.h"
+#include "OgreOverlaySystem.h"
+#include "OgreStaticPluginLoader.h"
+#include "OgreBitesConfigDialog.h"
 
-extern "C" struct SDL_Window;
-
-#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
-#include <android/native_window.h>
-#endif
-
-#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
-typedef ANativeWindow NativeWindowType;
-#else
-typedef SDL_Window NativeWindowType;
-#endif
-
-struct NativeWindowPair
+namespace Ogre
 {
-    Ogre::RenderWindow *render;
-    NativeWindowType *native;
-};
-
+    class OverlaySystem;
+}
 class lgOgre
 {
 public:
     lgOgre();
     virtual void crearRoot();
-    Ogre::RenderWindow *getRenderWindow() const
-    {
-        return mWindows.empty() ? NULL : mWindows[0].render;
-    }
-
     Ogre::Root *getRoot() const
     {
         return lgRoot;
     }
-
+    Ogre::FileSystemLayer &getSistemaArchivos() { return *sistemaArchivos; }
+    virtual bool configuracion();
 protected:
     Ogre::Root *lgRoot;
-    typedef std::vector<NativeWindowPair> WindowList;
-    WindowList mWindows;
+    Ogre::FileSystemLayer *sistemaArchivos;
+    Ogre::OverlaySystem *lgOverlaySystem;
+    OgreBites::StaticPluginLoader lgStaticPluginLoader;
+    Ogre::Viewport *lgVista;
 };

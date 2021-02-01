@@ -5,4 +5,7 @@ file(GLOB SDK ${CMAKE_SOURCE_DIR}/SDK/src/*.cpp)
 
 add_library(LibreGame src/LibreGame.cpp ${SDK})
 target_link_libraries(LibreGame OgreMain OgreBites OgreRTShaderSystem OgreTerrain)
+if ( NOT ANDROID)
+target_link_libraries(LibreGame SDL2)
+endif()
 target_include_directories(LibreGame PUBLIC ${CMAKE_SOURCE_DIR}/SDK/include)
