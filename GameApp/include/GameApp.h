@@ -3,5 +3,5 @@
 class GameApp : public LibreGame{
     public:
     GameApp();
-    void Escena();
+    void escena();
 };
