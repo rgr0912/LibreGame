@@ -1,11 +1,11 @@
+#include "lgOgre.h"
+
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
 #include <android/configuration.h>
 #include <android/asset_manager.h>
 #include <android/native_window.h>
 #include <android/input.h>
 #endif
-
-#include "lgOgre.h"
 
 class LibreGame : public lgOgre
 {
