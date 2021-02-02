@@ -26,5 +26,6 @@ void LibreGame::initApp()
     nodeCam->setPosition(0, 0, 227);
     lgVista = ventana_lista[0].ventana_ogre->addViewport(cam);
     lgVista->setBackgroundColour(Ogre::ColourValue(1, 0.2, 0.3));
+    cargarRecursos();
     lgRoot->startRendering();
 }

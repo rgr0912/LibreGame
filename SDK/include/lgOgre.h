@@ -20,10 +20,12 @@ public:
     }
     Ogre::FileSystemLayer &getSistemaArchivos() { return *sistemaArchivos; }
     virtual bool configuracion();
+    virtual void cargarRecursos();
 protected:
     Ogre::Root *lgRoot;
     Ogre::FileSystemLayer *sistemaArchivos;
     Ogre::OverlaySystem *lgOverlaySystem;
     OgreBites::StaticPluginLoader lgStaticPluginLoader;
     Ogre::Viewport *lgVista;
+    static Ogre::String getDefaultMediaDir();
 };
