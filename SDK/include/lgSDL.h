@@ -47,7 +47,6 @@ public:
     void mover_camara(Ogre::String tipo, Ogre::Camera *cam, int d);
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
     //ventanaNativapar crearVentanaAndroid(const Ogre::String &name, Ogre::Root* root, uint32_t w = 0, uint32_t h = 0, Ogre::NameValuePairList miscParams = Ogre::NameValuePairList());
-protected:
     AAssetManager *lgManagerAndroid;
     AConfiguration *lgConfigAndroid;
 #endif

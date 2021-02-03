@@ -1,4 +1,5 @@
 #include "lgOgre.h"
+#include <iostream>
 Ogre::String lgOgre::getDefaultMediaDir()
 {
     return Ogre::FileSystemLayer::resolveBundlePath(OGRE_MEDIA_DIR);
@@ -88,10 +89,10 @@ void lgOgre::cargarRecursos()
     type = genLocs.front().archive->getType();
 
     bool hasCgPlugin = false;
-    const Ogre::Root::PluginInstanceList &plugins = getRoot()->getInstalledPlugins();
-    for (size_t i = 0; i < plugins.size(); i++)
+    const Ogre::Root::PluginInstanceList &lgPlugins = getRoot()->getInstalledPlugins();
+    for (size_t i = 0; i < lgPlugins.size(); i++)
     {
-        if (plugins[i]->getName() == "Cg Program Manager")
+        if (lgPlugins[i]->getName() == "Cg Program Manager")
         {
             hasCgPlugin = true;
             break;
@@ -135,4 +136,39 @@ void lgOgre::cargarRecursos()
         rgm.addResourceLocation(arch + "/materials/programs/Cg", type, sec);
     if (use_HLSL_Cg_shared)
         rgm.addResourceLocation(arch + "/materials/programs/HLSL_Cg", type, sec);
+}
+void lgOgre::inicializarRecursos()
+{
+    Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
+}
+bool lgOgre::inicializarRTShaderSystem()
+{
+#ifdef OGRE_BUILD_COMPONENT_RTSHADERSYSTEM
+    if (Ogre::RTShader::ShaderGenerator::initialize())
+    {
+        mShaderGenerator = Ogre::RTShader::ShaderGenerator::getSingletonPtr();
+
+        // Create and register the material manager listener if it doesn't exist yet.
+        if (!mMaterialMgrListener)
+        {
+            mMaterialMgrListener = new OgreBites::SGTechniqueResolverListener(mShaderGenerator);
+            Ogre::MaterialManager::getSingleton().addListener(mMaterialMgrListener);
+        }
+
+        return true;
+    }
+#endif
+    return false;
+}
+void lgOgre::reconfigurar(const Ogre::String &renderer, Ogre::NameValuePairList &options)
+{
+    mNextRenderer = renderer;
+    Ogre::RenderSystem *rs = lgRoot->getRenderSystemByName(renderer);
+
+    // set all given render system options
+    for (Ogre::NameValuePairList::iterator it = options.begin(); it != options.end(); it++)
+    {
+        rs->setConfigOption(it->first, it->second);
+    }
+    lgRoot->queueEndRendering(); // break from render loop
 }
