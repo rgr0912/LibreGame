@@ -13,6 +13,7 @@ lgOgre::lgOgre()
     lgRoot = NULL;
     lgOverlaySystem = NULL;
     mShaderGenerator = NULL;
+    lgTmanager = NULL;
 }
 void lgOgre::crearRoot()
 {

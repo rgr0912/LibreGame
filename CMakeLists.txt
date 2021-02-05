@@ -19,8 +19,9 @@ if (ANDROID)
     add_ndk_native_app_glue_library()
 
     include_directories(${PROJECT_SOURCE_DIR}/RenderSystems/GLSupport/include)
-    set(SOURCE_FILES ${PROJECT_SOURCE_DIR}/GameApp/src/android_main.cpp)
-    add_library(GameApp SHARED ${HEADER_FILES} ${SOURCE_FILES} ${RESOURCE_FILES}${ESCENA})
+    set(SOURCE_FILES ${PROJECT_SOURCE_DIR}/GameApp/src/gestureDetector.cpp
+    ${PROJECT_SOURCE_DIR}/GameApp/src/android_main.cpp)
+    add_library(GameApp SHARED ${HEADER_FILES} ${SOURCE_FILES} ${RESOURCE_FILES} ${ESCENA})
 else()
 add_executable(GameApp GameApp/src/main.cpp ${ESCENA}) 
 target_link_libraries(GameApp LibreGame)
@@ -28,6 +29,7 @@ endif()
 if(ANDROID)
     target_link_libraries(GameApp native_app_glue cpufeatures android c m dl z log EGL GLESv2 "-u ANativeActivity_onCreate")
     target_link_libraries(GameApp OgreMain OgreBites OgreRTShaderSystem OgreTerrain)
+    target_link_libraries(GameApp ${log-lib})
     target_link_libraries(GameApp LibreGame)
     set_target_properties(GameApp PROPERTIES LINK_FLAGS -s) # strip symbols
 

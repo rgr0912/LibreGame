@@ -9,11 +9,12 @@ void lgOgre::cargarRecursos()
     auto &rgm = Ogre::ResourceGroupManager::getSingleton();
     // load resource paths from config file
     Ogre::ConfigFile cf;
-    Ogre::String resourcesPath = sistemaArchivos->getConfigFilePath("resources.cfg");
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
+    Ogre::String resourcesPath = sistemaArchivos->getConfigFilePath("resources.cfg");
     Ogre::Archive *apk = Ogre::ArchiveManager::getSingleton().load("", "APKFileSystem", true);
     cf.load(apk->open(resourcesPath));
 #else
+    Ogre::String resourcesPath = sistemaArchivos->getConfigFilePath(OGRE_CONFIG_DIR"/resources.cfg");
 
     if (Ogre::FileSystemLayer::fileExists(resourcesPath) || OGRE_PLATFORM == OGRE_PLATFORM_EMSCRIPTEN)
     {
