@@ -89,7 +89,7 @@ void lgSDL::sdlEventos(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *
         windowResized(win);
     }
 #else
-    //ImGui_ImplSDL2_InitForVulkan(ventana_lista[0].ventana_nativa);
+    ImGui_ImplSDL2_InitForVulkan(ventana_lista[0].ventana_nativa);
     if (ventana_lista.empty())
     {
         // SDL events no es inicializado

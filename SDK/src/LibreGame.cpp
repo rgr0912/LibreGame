@@ -3,6 +3,8 @@
 LibreGame::LibreGame() : lgSDL()
 {
     lgRoot = NULL;
+    std::unique_ptr<OgreBites::ImGuiInputListener> mImguiListener;
+    OgreBites::InputListenerChain mListenerChain;
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
     lgManagerAndroid = NULL;
     lgConfigAndroid = NULL;
@@ -44,6 +46,8 @@ void LibreGame::initApp()
     imguiOverlay->setZOrder(300);
     imguiOverlay->show();
     Ogre::OverlayManager::getSingleton().addOverlay(imguiOverlay);
+    
+    
 
     Ogre::Entity *sinbad = sm->createEntity("Sinbad", "Sinbad.mesh");
     Ogre::SceneNode *nodeS = sm->getRootSceneNode()->createChildSceneNode();
@@ -55,28 +59,32 @@ void LibreGame::initApp()
     nodeL->attachObject(l);
     nodeL->setPosition(0, 0, 20);
     capturarEvento();
-    //lgRoot->startRendering();
+    lgRoot->startRendering();
 }
-void LibreGame::capturarEvento(){
+void LibreGame::capturarEvento()
+{
     Ogre::LogManager::getSingletonPtr()->logMessage("*** Inicializado LibreGameSDK ***");
 
+    //
     Ogre::WindowEventUtilities::addWindowEventListener(ventana_lista[0].ventana_ogre, this);
     lgRoot->addFrameListener(this);
     ventana_lista[0].ventana_ogre->addListener(this);
 }
 void LibreGame::preViewportUpdate(const Ogre::RenderTargetViewportEvent &evt)
-{     
-    Ogre::ImGuiOverlay::NewFrame();
-    ImGui::ShowDemoWindow();
-      
+{
+    if(!evt.source->getOverlaysEnabled()) return;
+        if(!lgTmanager->getTraysLayer()->isVisible()) return;
+
+        Ogre::ImGuiOverlay::NewFrame();
+
+        ImGui::ShowDemoWindow();
 }
 bool LibreGame::frameStarted(const Ogre::FrameEvent &evt)
-{  
-    rw(lgCam);
+{
     //lgCam->setAspectRatio(Ogre::Real(getRenderWindow()->getWidth()/getRenderWindow()->getHeight()));
-    //ImGui_ImplSDL2_NewFrame(ventana_lista[0].ventana_nativa);
+    sdlEventos(lgRoot, ventana_lista[0].ventana_ogre, lgCam);
+    ImGui_ImplSDL2_NewFrame(ventana_lista[0].ventana_nativa);
     //oyente de ogre
-    //sdlEventos(lgRoot, ventana_lista[0].ventana_ogre, lgCam);
-      
+
     return true;
 }
