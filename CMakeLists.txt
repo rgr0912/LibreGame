@@ -1,15 +1,20 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(GameApp VERSION 0.1.0)
-
+if (ANDROID)
+add_subdirectory(${PROJECT_SOURCE_DIR}/Base/ogre-master_and)
+else()
 add_subdirectory(${PROJECT_SOURCE_DIR}/Base/ogre-master)
+add_subdirectory(${PROJECT_SOURCE_DIR}/Base/openal-soft-master)
+add_subdirectory(${PROJECT_SOURCE_DIR}/Base/vorbis-master)
+endif()
 add_subdirectory(${PROJECT_SOURCE_DIR}/SDK)
 
 set(CMAKE_MODULE_PATH
-  "${PROJECT_SOURCE_DIR}/Base/ogre-master/CMake"
-  "${PROJECT_SOURCE_DIR}/Base/ogre-master/CMake/Utils"
-  "${PROJECT_SOURCE_DIR}/Base/ogre-master/CMake/Packages"
+  "${PROJECT_SOURCE_DIR}/SDK/CMake"
+  "${PROJECT_SOURCE_DIR}/SDK/CMake/Utils"
+  "${PROJECT_SOURCE_DIR}/SDK/CMake/Packages"
 )
-set(OGRE_TEMPLATES_DIR "${PROJECT_SOURCE_DIR}/Base/ogre-master/CMake/Templates")
+set(OGRE_TEMPLATES_DIR "${PROJECT_SOURCE_DIR}/SDK/CMake/Templates")
 set(OGRE_WORK_DIR ${PROJECT_BINARY_DIR})
 file(GLOB ESCENA ${PROJECT_SOURCE_DIR}/GameApp/src/escena.cpp)
 if (ANDROID)
@@ -22,6 +27,7 @@ if (ANDROID)
     set(SOURCE_FILES ${PROJECT_SOURCE_DIR}/GameApp/src/gestureDetector.cpp
     ${PROJECT_SOURCE_DIR}/GameApp/src/android_main.cpp)
     add_library(GameApp SHARED ${HEADER_FILES} ${SOURCE_FILES} ${RESOURCE_FILES} ${ESCENA})
+    
 else()
 add_executable(GameApp GameApp/src/main.cpp ${ESCENA}) 
 target_link_libraries(GameApp LibreGame)

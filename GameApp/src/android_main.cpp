@@ -11,6 +11,11 @@
 /*=============================================================================
  | Ogre Android bridge
  =============================================================================*/
+bool *p_open2;
+Ogre::Vector3 lastpos;
+int cx = 0, cy = 0;
+float x=0;
+float y=0;
 struct OgreAndroidBridge
 {
     static int32_t handleInput(struct android_app *app, AInputEvent *event)
@@ -25,8 +30,8 @@ struct OgreAndroidBridge
 
         if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION)
         {
-             //__android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "fffff");
-            
+            //__android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "fffff");
+
             ndk_helper::GESTURE_STATE s = mPinchGesture.Detect(event);
 
             if (s & ndk_helper::GESTURE_STATE_START)
@@ -48,7 +53,24 @@ struct OgreAndroidBridge
                 }
             }
         }
-        
+        float dpx = AndroidApp.w_a / AndroidApp.getRenderWindow()->getWidth();
+        float dpy = AndroidApp.h_a / AndroidApp.getRenderWindow()->getHeight();
+
+        if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION)
+        {
+            x = AMotionEvent_getX(event, 0);
+            y = AMotionEvent_getY(event, 0);
+
+            int xx = (int)x;
+
+            ImGuiIO &io = ImGui::GetIO();
+            io.MousePos = ImVec2(x / dpx, y / dpy);
+            AndroidApp.moverCamara((x/dpx)/2 * -0.05f, (y/dpy)/2 * -0.05f,0);
+        }
+
+        int h2 = AndroidApp.getRenderWindow()->getHeight();
+        //std::string d2 = std::to_string(h2);
+        //__android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "dimension alto %d", (int)h2);
         AndroidApp.sdlEventosAndroid(event, wheel);
 
         return 1;
@@ -110,11 +132,9 @@ struct OgreAndroidBridge
                     return;
             }
 
-            if (AndroidApp.getRenderWindow())
+            if (AndroidApp.getRenderWindow() && AndroidApp.getRenderWindow()->isActive()) 
             {
-                
                 AndroidApp.getRoot()->renderOneFrame();
-                //AndroidApp.getRoot()->startRendering();
             }
         }
     }

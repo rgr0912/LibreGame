@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- exporter: blender2ogre 0.8.0 -->
+<!-- export_time: Wed, 03 Mar 2021 23:16:21 +0000 -->
+<!-- previous_export_time: Wed, 03 Mar 2021 23:16:03 +0000 -->
+<scene author="rick" formatVersion="1.1" >
+  <nodes >
+    <node name="Camera" >
+      <position x="-7.358891" y="4.958309" z="-6.925791" />
+      <rotation qw="0.780483" qx="-0.483536" qy="0.336872" qz="0.208704" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
+      <camera fov="0.3561858764623951" name="Camera" projectionType="perspective" >
+        <clipping far="100.0" near="0.10000000149011612" />
+      </camera>
+    </node>
+    <node name="Plane" >
+      <position x="-0.000000" y="0.000000" z="0.000000" />
+      <rotation qw="1.000000" qx="-0.000000" qy="0.000000" qz="0.000000" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
+      <entity meshFile="Plane.mesh" name="Plane" >
+        <userData />
+      </entity>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="Material.001.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourBackground b="0.05087608844041824" g="0.05087608844041824" r="0.05087608844041824" />
+  </environment>
+</scene>
