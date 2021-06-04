@@ -1,5 +1,10 @@
 #include "lgOgre.h"
 #include <iostream>
+
+#define OGRE_CONFIG_DIR "/home/rgr/LibreGame/Media"
+#define OGRE_MEDIA_DIR "/home/rgr/LibreGame/Media"
+#define OGRE_PLUGIN_DIR "/home/rgr/LibreGame/Media" 
+
 Ogre::String lgOgre::getDefaultMediaDir()
 {
     return Ogre::FileSystemLayer::resolveBundlePath(OGRE_MEDIA_DIR);

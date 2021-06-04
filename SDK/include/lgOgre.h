@@ -18,35 +18,53 @@
 #include "OgreSGTechniqueResolverListener.h"
 #endif // INCLUDE_RTSHADER_SYSTEM
 
+#include "oggsound/include/OgreOggSoundPlugin.h"
+
 namespace Ogre
 {
     class OverlaySystem;
 }
-class lgOgre : public Ogre::FrameListener, public Ogre::RenderTargetListener, public Ogre::WindowEventListener, public OgreBites::TrayListener
+
+class lgOgre : public Ogre::FrameListener, public Ogre::RenderTargetListener, public Ogre::WindowEventListener
 {
 public:
     lgOgre();
-    virtual void crearRoot();
+    //funciones publicas
+
+    //objetos publicos
     Ogre::Root *getRoot() const
     {
         return lgRoot;
+    }
+    Ogre::OverlaySystem *getOverlaySystem() const
+    {
+        return lgOverlaySystem;
     }
     Ogre::Camera *getCam() const
     {
         return lgCam;
     }
     Ogre::FileSystemLayer &getSistemaArchivos() { return *sistemaArchivos; }
+    Ogre::OverlaySystem *lgOverlaySystem;
+    Ogre::Camera *lgCam;
+    Ogre::SceneNode *nodeCam;
+    //OgreBites::TrayManager *lgTmanager;
+
+    //funciones protegidas
+    virtual void crearRoot();
     virtual bool configuracion();
     virtual void reconfigurar(const Ogre::String &renderer, Ogre::NameValuePairList &options);
     virtual void cargarRecursos();
     virtual bool inicializarRTShaderSystem();
     virtual void inicializarRecursos();
-    Ogre::OverlaySystem *lgOverlaySystem;
-    Ogre::Camera *lgCam;
-protected:
+    //virtual mouseMoved(const OgreBites::MouseMotionEvent& evt);
+    //objectos protegios
     Ogre::Root *lgRoot;
+    Ogre::SceneManager *sm;
+    Ogre::RenderWindow* lgVentana;
     Ogre::FileSystemLayer *sistemaArchivos;
-    std::unique_ptr<OgreBites::TrayManager>  lgTmanager;
+    //OgreBites::TrayManager *lgTmanager;
+    std::unique_ptr<OgreBites::TrayManager> lgTmanager;
     OgreBites::StaticPluginLoader lgStaticPluginLoader;
     Ogre::Viewport *lgVista;
     static Ogre::String getDefaultMediaDir();
@@ -55,4 +73,5 @@ protected:
     Ogre::RTShader::ShaderGenerator *mShaderGenerator;            // The Shader generator instance.
     OgreBites::SGTechniqueResolverListener *mMaterialMgrListener; // Shader generator material manager listener.
 #endif                                                            // INCLUDE_RTSHADER_SYSTEM
+    OgreOggSound::OgreOggSoundPlugin* mplugins;
 };

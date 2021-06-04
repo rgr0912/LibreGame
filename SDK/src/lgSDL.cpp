@@ -3,10 +3,12 @@
 lgSDL::lgSDL()
 {
 }
-void lgSDL::rw(Ogre::Camera* cam){
-    cam->setNearClipDistance(0.5);
-    cam->setFarClipDistance(500);
-cam->setAspectRatio(Ogre::Real(getRenderWindow()->getWidth()/getRenderWindow()->getHeight()));
+void lgSDL::rw(int x, int y)
+{
+    ImGuiIO io;
+    //io.MouseDrawCursor = true;
+    io.MousePos.x = x;
+    io.MousePos.y = y;
 }
 //codigo extraido de ogre para implementar sdl
 ventanaNativapar lgSDL::crearVentana(const Ogre::String &name, Ogre::Root *root, Ogre::uint32 w, Ogre::uint32 h, Ogre::NameValuePairList miscParams)
@@ -18,15 +20,13 @@ ventanaNativapar lgSDL::crearVentana(const Ogre::String &name, Ogre::Root *root,
     if (contentScaling > 1.0)
     {
         miscParams["contentScalingFactor"] = std::to_string(contentScaling);
-        miscParams["FSAA"] = "2";
+        miscParams["FSAA"] = "0";
     }
     miscParams["externalWindowHandle"] = Ogre::StringConverter::toString(reinterpret_cast<size_t>(ventana_lista[0].ventana_nativa));
     miscParams["androidConfig"] = Ogre::StringConverter::toString(reinterpret_cast<size_t>(lgConfigAndroid));
     miscParams["preserveContext"] = "true"; //Optionally preserve the gl context, prevents reloading all resources, this is false by default
 
     ventana_lista[0].ventana_ogre = Ogre::Root::getSingleton().createRenderWindow(name, 0, 0, false, &miscParams);
-
-    
 
     return tipo_ventana;
 #else
@@ -82,10 +82,13 @@ void lgSDL::sdlEventos(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *
     for (WindowList::iterator it = ventana_lista.begin(); it != ventana_lista.end(); ++it)
     {
         Ogre::RenderWindow *win = it->ventana_ogre;
-        int w = ANativeWindow_getWidth(it->ventana_nativa);
-        int h = ANativeWindow_getHeight(it->ventana_nativa);
-        win->resize(w, h);
-        cam->setAspectRatio(Ogre::Real(w) / Ogre::Real(h));
+        w_a = ANativeWindow_getWidth(it->ventana_nativa);
+        h_a = ANativeWindow_getHeight(it->ventana_nativa);
+        //std::string n1 = std::to_string(w);
+        //std::string n2 = std::to_string(h);
+        //Ogre::LogManager::getSingletonPtr()->logMessage("mov en x : " + n1 + " y : " + n2);
+        win->resize(w_a, h_a);
+        cam->setAspectRatio(Ogre::Real(w_a) / Ogre::Real(h_a));
         windowResized(win);
     }
 #else
@@ -123,7 +126,19 @@ void lgSDL::sdlEventos(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *
                 cam->setAspectRatio(Ogre::Real(event.window.data1) / Ogre::Real(event.window.data2));
                 windowResized(win);
             }
-            break; /**
+            break;
+        case SDL_CONTROLLERDEVICEADDED:
+            if (auto c = SDL_GameControllerOpen(event.cdevice.which))
+            {
+                const char *name = SDL_GameControllerName(c);
+                Ogre::LogManager::getSingleton().stream() << "Opened Gamepad: " << (name ? name : "unnamed");
+            }
+            break;
+        default:
+            _fireInputEvent(convert(event), event.window.windowID);
+            break;
+
+            /**
         case SDL_KEYDOWN:
         {
             if (event.key.keysym.sym == SDLK_x)
@@ -183,15 +198,24 @@ void lgSDL::sdlEventos(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *
     }
 #endif
 }
+void lgSDL::addInputListener(NativeWindowType *win, InputListener *lis)
+{
+#if OGRE_PLATFORM != OGRE_PLATFORM_ANDROID
+    mInputListeners.insert(std::make_pair(SDL_GetWindowID(win), lis));
+#else
+    mInputListeners.insert(std::make_pair(0, lis));
+#endif
+}
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
 using namespace OgreBites;
+int dx = 0;
+int dy = 0;
+
 void lgSDL::sdlEventosAndroid(AInputEvent *event, int wheel)
 {
     Event evt = {0};
 
     static TouchFingerEvent lastTouch = {0};
-    ImGuiIO &io = ImGui::GetIO();
-    io.MouseDrawCursor = false;
 
     if (wheel)
     {
@@ -210,24 +234,18 @@ void lgSDL::sdlEventosAndroid(AInputEvent *event, int wheel)
         {
         case AMOTION_EVENT_ACTION_DOWN:
             evt.type = FINGERDOWN;
-            Ogre::LogManager::getSingletonPtr()->logMessage("*** pulsando sobre la pantalla ***");
-            io.MouseDown[wheel] = true;
             break;
         case AMOTION_EVENT_ACTION_UP:
             evt.type = FINGERUP;
-            Ogre::LogManager::getSingletonPtr()->logMessage("*** sin pulsando sobre la pantalla ***");
-            io.MouseDown[wheel] = false;
             break;
         case AMOTION_EVENT_ACTION_MOVE:
             evt.type = FINGERMOTION;
-            Ogre::LogManager::getSingletonPtr()->logMessage("*** deslisando sobre la pantalla ***");
             break;
         default:
             return;
         }
 
         Ogre::RenderWindow *win = getRenderWindow();
-        windowResized(win);
 
         evt.tfinger.fingerId = AMotionEvent_getPointerId(event, 0);
         evt.tfinger.x = AMotionEvent_getRawX(event, 0) / win->getWidth() * win->getViewPointToPixelScale();
@@ -240,10 +258,6 @@ void lgSDL::sdlEventosAndroid(AInputEvent *event, int wheel)
 
             evt.tfinger.dx = evt.tfinger.x - lastTouch.x;
             evt.tfinger.dy = evt.tfinger.y - lastTouch.y;
-
-            std::string mv = std::to_string(evt.tfinger.dx);
-            Ogre::LogManager::getSingletonPtr()->logMessage(mv);
-            
         }
 
         lastTouch = evt.tfinger;
@@ -320,6 +334,73 @@ void lgSDL::_fireInputEvent(const Event &event, uint32_t windowID) const
             l.buttonPressed(event.cbutton);
             break;
         case CONTROLLERBUTTONUP:
+            l.buttonReleased(event.cbutton);
+            break;
+        }
+    }
+}
+#else
+void lgSDL::_fireInputEvent(const OgreBites::Event &event, uint32_t windowID) const
+{
+    OgreBites::Event scaled = event;
+    if (OGRE_PLATFORM == OGRE_PLATFORM_APPLE && event.type == OgreBites::MOUSEMOTION)
+    {
+        // assumes all windows have the same scale
+        float viewScale = getRenderWindow()->getViewPointToPixelScale();
+        scaled.motion.x *= viewScale;
+        scaled.motion.y *= viewScale;
+    }
+
+    for (InputListenerList::iterator it = mInputListeners.begin();
+         it != mInputListeners.end(); ++it)
+    {
+        // gamepad events are not window specific
+        if (it->first != windowID && event.type <= OgreBites::TEXTINPUT)
+            continue;
+
+        InputListener &l = *it->second;
+
+        switch (event.type)
+        {
+        case OgreBites::KEYDOWN:
+            l.keyPressed(event.key);
+            break;
+        case OgreBites::KEYUP:
+            l.keyReleased(event.key);
+            break;
+        case OgreBites::MOUSEBUTTONDOWN:
+            l.mousePressed(event.button);
+            break;
+        case OgreBites::MOUSEBUTTONUP:
+            l.mouseReleased(event.button);
+            break;
+        case OgreBites::MOUSEWHEEL:
+            l.mouseWheelRolled(event.wheel);
+            break;
+        case OgreBites::MOUSEMOTION:
+            l.mouseMoved(scaled.motion);
+            break;
+        case OgreBites::FINGERDOWN:
+            // for finger down we have to move the pointer first
+            l.touchMoved(event.tfinger);
+            l.touchPressed(event.tfinger);
+            break;
+        case OgreBites::FINGERUP:
+            l.touchReleased(event.tfinger);
+            break;
+        case OgreBites::FINGERMOTION:
+            l.touchMoved(event.tfinger);
+            break;
+        case OgreBites::TEXTINPUT:
+            l.textInput(event.text);
+            break;
+        case OgreBites::CONTROLLERAXISMOTION:
+            l.axisMoved(event.axis);
+            break;
+        case OgreBites::CONTROLLERBUTTONDOWN:
+            l.buttonPressed(event.cbutton);
+            break;
+        case OgreBites::CONTROLLERBUTTONUP:
             l.buttonReleased(event.cbutton);
             break;
         }
