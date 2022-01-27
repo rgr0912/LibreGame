@@ -3,7 +3,7 @@ LibreGame pretende ser un motor de videojuegos basado en la libreria de Ogre 3D,
 *Motor de renderizado > Ogre3D
 *Motor de Fisica > Bullet Physics
 *Audio > OpenAL
-*Formato de audio > vorbis ssssss
+*Formato de audio > vorbis
 *GUI > ImGui
 *Exportar > Android 
 <p align="center">
