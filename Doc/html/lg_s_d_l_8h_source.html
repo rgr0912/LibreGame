@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LibreGame: Fichero Fuente /home/rgr/LibreGame/SDK/include/lgSDL.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LibreGame
+   </div>
+   <div id="projectbrief">Game engine opersource</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('lg_s_d_l_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">lgSDL.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lg_s_d_l_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">LibreGame es un proyecto que intenta crear un game engine a partir de librerias libres.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Ogre.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;OgreTrays.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;OgreInput.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;OgreImGuiOverlay.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;OgreImGuiInputListener.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;imgui_impl_sdl.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;android/configuration.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;android/asset_manager.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;android/native_window.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;android/input.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">   17</a></span>&#160;<span class="keyword">typedef</span> ANativeWindow <a class="code" href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">NativeWindowType</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>OgreBites;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keyword">struct </span>SDL_Window;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> SDL_Window <a class="code" href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">NativeWindowType</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;SDL2/SDL.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;SDL2/SDL_syswm.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;SDLInputMapping.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structventana_nativapar.html">   27</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structventana_nativapar.html">ventanaNativapar</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structventana_nativapar.html#ab9663c79c75240622212f14aa16dac4a">   29</a></span>&#160;    Ogre::RenderWindow *<a class="code" href="structventana_nativapar.html#ab9663c79c75240622212f14aa16dac4a">ventana_ogre</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structventana_nativapar.html#aa1c2016c024a300148ce6d8ae1de2c12">   30</a></span>&#160;    <a class="code" href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">NativeWindowType</a> *<a class="code" href="structventana_nativapar.html#aa1c2016c024a300148ce6d8ae1de2c12">ventana_nativa</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlg_s_d_l.html">lgSDL</a> : <span class="keyword">public</span> OgreBites::InputListener, <span class="keyword">public</span> OgreBites::TrayListener</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a28a5b5fa9b6c8410b047b78bfaab765b">   39</a></span>&#160;    <a class="code" href="classlg_s_d_l.html#a28a5b5fa9b6c8410b047b78bfaab765b">lgSDL</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a6d15b2d3c1e17eea3a6bf392dcfc2118">   40</a></span>&#160;    <span class="keyword">typedef</span> std::set&lt;std::pair&lt;uint32_t, InputListener *&gt;&gt; <a class="code" href="classlg_s_d_l.html#a6d15b2d3c1e17eea3a6bf392dcfc2118">InputListenerList</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#af398090eeae1fbf1d86039d2150011f3">   41</a></span>&#160;    <a class="code" href="classlg_s_d_l.html#a6d15b2d3c1e17eea3a6bf392dcfc2118">InputListenerList</a> <a class="code" href="classlg_s_d_l.html#af398090eeae1fbf1d86039d2150011f3">mInputListeners</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ad312be64c7c9e6ef718308bf301a4747">   43</a></span>&#160;    std::unique_ptr&lt;OgreBites::ImGuiInputListener&gt; <a class="code" href="classlg_s_d_l.html#ad312be64c7c9e6ef718308bf301a4747">sdlImguiListener</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a07b1a14b00c98b255a7d125ac51f941e">   44</a></span>&#160;    OgreBites::InputListenerChain <a class="code" href="classlg_s_d_l.html#a07b1a14b00c98b255a7d125ac51f941e">sdlListenerChain</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a15d2980acca339bd4c0f07b8a0d47b7a">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#a15d2980acca339bd4c0f07b8a0d47b7a">sdlEventos</a>(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *cam, Ogre::RaySceneQuery *mRay);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ae184a231710d65b217e91ac8e1830642">   50</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classlg_s_d_l.html#ae184a231710d65b217e91ac8e1830642">sdl_seleccion</a>(Ogre::RenderWindow *win, Ogre::Camera *cam, <span class="keywordtype">bool</span> m, Ogre::RaySceneQuery *mRay, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> xrel);</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ad1ea00bd9042a125fe2e80d84bd203a1">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#ad1ea00bd9042a125fe2e80d84bd203a1">windowResized</a>(Ogre::RenderWindow *rw) {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#af230b508b989795cc9570bc510ae7e1e">   53</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#af230b508b989795cc9570bc510ae7e1e">sdlEventosAndroid</a>(AInputEvent *event, <span class="keywordtype">int</span> wheel = 0);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ac84dce91d4388e0a3aef4559436bf6d1">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#ac84dce91d4388e0a3aef4559436bf6d1">_fireInputEvent</a>(<span class="keyword">const</span> Event &amp;event, uint32_t windowID) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a833b9bee69604234d999e9c6587452be">   55</a></span>&#160;    AAssetManager *<a class="code" href="classlg_s_d_l.html#a833b9bee69604234d999e9c6587452be">lgManagerAndroid</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a95ca7f5f94cc3a406dd4dec9a38a63b3">   56</a></span>&#160;    AConfiguration *<a class="code" href="classlg_s_d_l.html#a95ca7f5f94cc3a406dd4dec9a38a63b3">lgConfigAndroid</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a8c099398d94ef8aecf78c67a4e527dd5">   57</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classlg_s_d_l.html#a8c099398d94ef8aecf78c67a4e527dd5">w_a</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ad0a93799b35b3a6a3370fea2c6468778">   58</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classlg_s_d_l.html#ad0a93799b35b3a6a3370fea2c6468778">h_a</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> _fireInputEvent(<span class="keyword">const</span> OgreBites::Event &amp;event, uint32_t windowID) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a4022ed2f5e5531287957c8ffb871d4a7">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#a4022ed2f5e5531287957c8ffb871d4a7">addInputListener</a>(<a class="code" href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">NativeWindowType</a> *win, InputListener *lis);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#aac359658f8bc6356efff3d2d6c601343">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_s_d_l.html#aac359658f8bc6356efff3d2d6c601343">addInputListener</a>(InputListener *lis)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        OgreAssert(!ventana_lista.empty(), <span class="stringliteral">&quot;cree una ventana primero&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        addInputListener(ventana_lista[0].ventana_nativa, lis);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a9d75a3cf194692352b4fc57bd4b9a91c">   71</a></span>&#160;    Ogre::RenderWindow *<a class="code" href="classlg_s_d_l.html#a9d75a3cf194692352b4fc57bd4b9a91c">ogreWindow</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#af7bc040ac1d61271aebfa97bf3e81edf">   72</a></span>&#160;    <a class="code" href="structventana_nativapar.html">ventanaNativapar</a> tipo_ventana = {NULL, NULL};</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a7c24e3d780afa9d5354555b2e80901bd">   73</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structventana_nativapar.html">ventanaNativapar</a> <a class="code" href="classlg_s_d_l.html#a7c24e3d780afa9d5354555b2e80901bd">crearVentana</a>(<span class="keyword">const</span> Ogre::String &amp;nombre, Ogre::Root *root, uint32_t w = 0, uint32_t h = 0, Ogre::NameValuePairList miscParams = Ogre::NameValuePairList());</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#ac7233019dd54d51d5d72eeae2c3fd7e2">   74</a></span>&#160;    Ogre::RenderWindow *<a class="code" href="classlg_s_d_l.html#ac7233019dd54d51d5d72eeae2c3fd7e2">getRenderWindow</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> ventana_lista.empty() ? NULL : ventana_lista[0].ventana_ogre;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#af44424243ec17e90ebed0a063de096e1">   79</a></span>&#160;    Ogre::String sdlObjeto = <span class="stringliteral">&quot;no&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a538b71abb143d7b220090eb0b4ac66c3">   80</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;ventanaNativapar&gt; <a class="code" href="classlg_s_d_l.html#a538b71abb143d7b220090eb0b4ac66c3">WindowList</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a818cf3a49e62b55b33731d3add6d9072">   81</a></span>&#160;    <a class="code" href="classlg_s_d_l.html#a538b71abb143d7b220090eb0b4ac66c3">WindowList</a> <a class="code" href="classlg_s_d_l.html#a818cf3a49e62b55b33731d3add6d9072">ventana_lista</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#adc6aeaa56fe0c0c91c65d119cdb03967">   82</a></span>&#160;    Ogre::RaySceneQueryResult::iterator <a class="code" href="classlg_s_d_l.html#adc6aeaa56fe0c0c91c65d119cdb03967">itr</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classlg_s_d_l.html#a791cda3329b36bbee535e43d7ff59643">   83</a></span>&#160;    Ogre::SceneNode *<a class="code" href="classlg_s_d_l.html#a791cda3329b36bbee535e43d7ff59643">sdlNodo</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="ttc" id="aclasslg_s_d_l_html"><div class="ttname"><a href="classlg_s_d_l.html">lgSDL</a></div><div class="ttdoc">Implementacion de la libreria de SDL para la entrada de teclado y raton para el game engine,...</div><div class="ttdef"><b>Definition:</b> lgSDL.h:37</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a07b1a14b00c98b255a7d125ac51f941e"><div class="ttname"><a href="classlg_s_d_l.html#a07b1a14b00c98b255a7d125ac51f941e">lgSDL::sdlListenerChain</a></div><div class="ttdeci">OgreBites::InputListenerChain sdlListenerChain</div><div class="ttdef"><b>Definition:</b> lgSDL.h:44</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a15d2980acca339bd4c0f07b8a0d47b7a"><div class="ttname"><a href="classlg_s_d_l.html#a15d2980acca339bd4c0f07b8a0d47b7a">lgSDL::sdlEventos</a></div><div class="ttdeci">void sdlEventos(Ogre::Root *root, Ogre::RenderWindow *win, Ogre::Camera *cam, Ogre::RaySceneQuery *mRay)</div><div class="ttdoc">sdlEvento proporciona la entrada del teclado y raton</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a28a5b5fa9b6c8410b047b78bfaab765b"><div class="ttname"><a href="classlg_s_d_l.html#a28a5b5fa9b6c8410b047b78bfaab765b">lgSDL::lgSDL</a></div><div class="ttdeci">lgSDL()</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a4022ed2f5e5531287957c8ffb871d4a7"><div class="ttname"><a href="classlg_s_d_l.html#a4022ed2f5e5531287957c8ffb871d4a7">lgSDL::addInputListener</a></div><div class="ttdeci">void addInputListener(NativeWindowType *win, InputListener *lis)</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a538b71abb143d7b220090eb0b4ac66c3"><div class="ttname"><a href="classlg_s_d_l.html#a538b71abb143d7b220090eb0b4ac66c3">lgSDL::WindowList</a></div><div class="ttdeci">std::vector&lt; ventanaNativapar &gt; WindowList</div><div class="ttdef"><b>Definition:</b> lgSDL.h:80</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a6d15b2d3c1e17eea3a6bf392dcfc2118"><div class="ttname"><a href="classlg_s_d_l.html#a6d15b2d3c1e17eea3a6bf392dcfc2118">lgSDL::InputListenerList</a></div><div class="ttdeci">std::set&lt; std::pair&lt; uint32_t, InputListener * &gt; &gt; InputListenerList</div><div class="ttdef"><b>Definition:</b> lgSDL.h:40</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a791cda3329b36bbee535e43d7ff59643"><div class="ttname"><a href="classlg_s_d_l.html#a791cda3329b36bbee535e43d7ff59643">lgSDL::sdlNodo</a></div><div class="ttdeci">Ogre::SceneNode * sdlNodo</div><div class="ttdef"><b>Definition:</b> lgSDL.h:83</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a7c24e3d780afa9d5354555b2e80901bd"><div class="ttname"><a href="classlg_s_d_l.html#a7c24e3d780afa9d5354555b2e80901bd">lgSDL::crearVentana</a></div><div class="ttdeci">virtual ventanaNativapar crearVentana(const Ogre::String &amp;nombre, Ogre::Root *root, uint32_t w=0, uint32_t h=0, Ogre::NameValuePairList miscParams=Ogre::NameValuePairList())</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a818cf3a49e62b55b33731d3add6d9072"><div class="ttname"><a href="classlg_s_d_l.html#a818cf3a49e62b55b33731d3add6d9072">lgSDL::ventana_lista</a></div><div class="ttdeci">WindowList ventana_lista</div><div class="ttdef"><b>Definition:</b> lgSDL.h:81</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a833b9bee69604234d999e9c6587452be"><div class="ttname"><a href="classlg_s_d_l.html#a833b9bee69604234d999e9c6587452be">lgSDL::lgManagerAndroid</a></div><div class="ttdeci">AAssetManager * lgManagerAndroid</div><div class="ttdef"><b>Definition:</b> lgSDL.h:55</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a8c099398d94ef8aecf78c67a4e527dd5"><div class="ttname"><a href="classlg_s_d_l.html#a8c099398d94ef8aecf78c67a4e527dd5">lgSDL::w_a</a></div><div class="ttdeci">int w_a</div><div class="ttdef"><b>Definition:</b> lgSDL.h:57</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a95ca7f5f94cc3a406dd4dec9a38a63b3"><div class="ttname"><a href="classlg_s_d_l.html#a95ca7f5f94cc3a406dd4dec9a38a63b3">lgSDL::lgConfigAndroid</a></div><div class="ttdeci">AConfiguration * lgConfigAndroid</div><div class="ttdef"><b>Definition:</b> lgSDL.h:56</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_a9d75a3cf194692352b4fc57bd4b9a91c"><div class="ttname"><a href="classlg_s_d_l.html#a9d75a3cf194692352b4fc57bd4b9a91c">lgSDL::ogreWindow</a></div><div class="ttdeci">Ogre::RenderWindow * ogreWindow</div><div class="ttdef"><b>Definition:</b> lgSDL.h:71</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_aac359658f8bc6356efff3d2d6c601343"><div class="ttname"><a href="classlg_s_d_l.html#aac359658f8bc6356efff3d2d6c601343">lgSDL::addInputListener</a></div><div class="ttdeci">void addInputListener(InputListener *lis)</div><div class="ttdef"><b>Definition:</b> lgSDL.h:66</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ac7233019dd54d51d5d72eeae2c3fd7e2"><div class="ttname"><a href="classlg_s_d_l.html#ac7233019dd54d51d5d72eeae2c3fd7e2">lgSDL::getRenderWindow</a></div><div class="ttdeci">Ogre::RenderWindow * getRenderWindow() const</div><div class="ttdef"><b>Definition:</b> lgSDL.h:74</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ac84dce91d4388e0a3aef4559436bf6d1"><div class="ttname"><a href="classlg_s_d_l.html#ac84dce91d4388e0a3aef4559436bf6d1">lgSDL::_fireInputEvent</a></div><div class="ttdeci">void _fireInputEvent(const Event &amp;event, uint32_t windowID) const</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ad0a93799b35b3a6a3370fea2c6468778"><div class="ttname"><a href="classlg_s_d_l.html#ad0a93799b35b3a6a3370fea2c6468778">lgSDL::h_a</a></div><div class="ttdeci">int h_a</div><div class="ttdef"><b>Definition:</b> lgSDL.h:58</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ad1ea00bd9042a125fe2e80d84bd203a1"><div class="ttname"><a href="classlg_s_d_l.html#ad1ea00bd9042a125fe2e80d84bd203a1">lgSDL::windowResized</a></div><div class="ttdeci">void windowResized(Ogre::RenderWindow *rw)</div><div class="ttdef"><b>Definition:</b> lgSDL.h:51</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ad312be64c7c9e6ef718308bf301a4747"><div class="ttname"><a href="classlg_s_d_l.html#ad312be64c7c9e6ef718308bf301a4747">lgSDL::sdlImguiListener</a></div><div class="ttdeci">std::unique_ptr&lt; OgreBites::ImGuiInputListener &gt; sdlImguiListener</div><div class="ttdef"><b>Definition:</b> lgSDL.h:43</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_adc6aeaa56fe0c0c91c65d119cdb03967"><div class="ttname"><a href="classlg_s_d_l.html#adc6aeaa56fe0c0c91c65d119cdb03967">lgSDL::itr</a></div><div class="ttdeci">Ogre::RaySceneQueryResult::iterator itr</div><div class="ttdef"><b>Definition:</b> lgSDL.h:82</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_ae184a231710d65b217e91ac8e1830642"><div class="ttname"><a href="classlg_s_d_l.html#ae184a231710d65b217e91ac8e1830642">lgSDL::sdl_seleccion</a></div><div class="ttdeci">bool sdl_seleccion(Ogre::RenderWindow *win, Ogre::Camera *cam, bool m, Ogre::RaySceneQuery *mRay, int x, int y, int xrel)</div><div class="ttdoc">sdl_seleccion crea un una seleccion de un objeto en pantalla.</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_af230b508b989795cc9570bc510ae7e1e"><div class="ttname"><a href="classlg_s_d_l.html#af230b508b989795cc9570bc510ae7e1e">lgSDL::sdlEventosAndroid</a></div><div class="ttdeci">virtual void sdlEventosAndroid(AInputEvent *event, int wheel=0)</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html_af398090eeae1fbf1d86039d2150011f3"><div class="ttname"><a href="classlg_s_d_l.html#af398090eeae1fbf1d86039d2150011f3">lgSDL::mInputListeners</a></div><div class="ttdeci">InputListenerList mInputListeners</div><div class="ttdef"><b>Definition:</b> lgSDL.h:41</div></div>
+<div class="ttc" id="alg_s_d_l_8h_html_a88a77a5c931d0e62eeb85b7c147911e7"><div class="ttname"><a href="lg_s_d_l_8h.html#a88a77a5c931d0e62eeb85b7c147911e7">NativeWindowType</a></div><div class="ttdeci">ANativeWindow NativeWindowType</div><div class="ttdef"><b>Definition:</b> lgSDL.h:17</div></div>
+<div class="ttc" id="astructventana_nativapar_html"><div class="ttname"><a href="structventana_nativapar.html">ventanaNativapar</a></div><div class="ttdef"><b>Definition:</b> lgSDL.h:28</div></div>
+<div class="ttc" id="astructventana_nativapar_html_aa1c2016c024a300148ce6d8ae1de2c12"><div class="ttname"><a href="structventana_nativapar.html#aa1c2016c024a300148ce6d8ae1de2c12">ventanaNativapar::ventana_nativa</a></div><div class="ttdeci">NativeWindowType * ventana_nativa</div><div class="ttdef"><b>Definition:</b> lgSDL.h:30</div></div>
+<div class="ttc" id="astructventana_nativapar_html_ab9663c79c75240622212f14aa16dac4a"><div class="ttname"><a href="structventana_nativapar.html#ab9663c79c75240622212f14aa16dac4a">ventanaNativapar::ventana_ogre</a></div><div class="ttdeci">Ogre::RenderWindow * ventana_ogre</div><div class="ttdef"><b>Definition:</b> lgSDL.h:29</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6309d378ceffb9970caf11a0592736.html">SDK</a></li><li class="navelem"><a class="el" href="dir_4fe8a5edf869208696d37e8a40956a24.html">include</a></li><li class="navelem"><a class="el" href="lg_s_d_l_8h.html">lgSDL.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LibreGame: Fichero Fuente /home/rgr/LibreGame/SDK/include/lgLuces.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LibreGame
+   </div>
+   <div id="projectbrief">Game engine opersource</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('lg_luces_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">lgLuces.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lg_luces_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Ogre.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classlg_luces.html">    3</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlg_luces.html">lgLuces</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classlg_luces.html#ac4f3a265f7662a404275d92bef677cf1">    6</a></span>&#160;    <a class="code" href="classlg_luces.html#ac4f3a265f7662a404275d92bef677cf1">lgLuces</a>(Ogre::String nombre, <span class="keywordtype">int</span> tipo)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="classlg_luces.html#ad3e624ca58499beef8f2a4bc6429a0b5">setNombre</a>(nombre);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classlg_luces.html#ad4100394edf570ac59677700a118952a">setTipo</a>(tipo);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    };</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classlg_luces.html#ad3e624ca58499beef8f2a4bc6429a0b5">   11</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_luces.html#ad3e624ca58499beef8f2a4bc6429a0b5">setNombre</a>(Ogre::String nombre);</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classlg_luces.html#ad4100394edf570ac59677700a118952a">   12</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_luces.html#ad4100394edf570ac59677700a118952a">setTipo</a>(<span class="keywordtype">int</span> tipo);</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classlg_luces.html#a465717fbe8fb7abe71cbb39061a2db54">   13</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_luces.html#a465717fbe8fb7abe71cbb39061a2db54">mostrar</a>(Ogre::SceneManager* sm);</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classlg_luces.html#a7eee8e0bc4a648b04110aa41bbcc0d53">   14</a></span>&#160;    Ogre::SceneManager *<a class="code" href="classlg_luces.html#a7eee8e0bc4a648b04110aa41bbcc0d53">sm_luz</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classlg_luces.html#ac91657ca772919ef30685992587c62b6">   15</a></span>&#160;    Ogre::Light *<a class="code" href="classlg_luces.html#ac91657ca772919ef30685992587c62b6">luz</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classlg_luces.html#a3f93208346737e2bf63488f898d65052">   16</a></span>&#160;    Ogre::SceneNode *<a class="code" href="classlg_luces.html#a3f93208346737e2bf63488f898d65052">nodo</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classlg_luces.html#a58f32680a94ca05c5f1ac8ef81f1ec9e">   17</a></span>&#160;    Ogre::String <a class="code" href="classlg_luces.html#a58f32680a94ca05c5f1ac8ef81f1ec9e">nombre_luz</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classlg_luces.html#acfa0c9aba9e7002bd5c6c2867b5ad0d0">   18</a></span>&#160;    Ogre::String <a class="code" href="classlg_luces.html#acfa0c9aba9e7002bd5c6c2867b5ad0d0">tipo_luz</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classlg_luces.html#aad80f8f3db01f02bb158eb3f6d332cca">   19</a></span>&#160;    Ogre::Light* <a class="code" href="classlg_luces.html#aad80f8f3db01f02bb158eb3f6d332cca">luzOgre</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="ttc" id="aclasslg_luces_html"><div class="ttname"><a href="classlg_luces.html">lgLuces</a></div><div class="ttdef"><b>Definition:</b> lgLuces.h:4</div></div>
+<div class="ttc" id="aclasslg_luces_html_a3f93208346737e2bf63488f898d65052"><div class="ttname"><a href="classlg_luces.html#a3f93208346737e2bf63488f898d65052">lgLuces::nodo</a></div><div class="ttdeci">Ogre::SceneNode * nodo</div><div class="ttdef"><b>Definition:</b> lgLuces.h:16</div></div>
+<div class="ttc" id="aclasslg_luces_html_a465717fbe8fb7abe71cbb39061a2db54"><div class="ttname"><a href="classlg_luces.html#a465717fbe8fb7abe71cbb39061a2db54">lgLuces::mostrar</a></div><div class="ttdeci">void mostrar(Ogre::SceneManager *sm)</div></div>
+<div class="ttc" id="aclasslg_luces_html_a58f32680a94ca05c5f1ac8ef81f1ec9e"><div class="ttname"><a href="classlg_luces.html#a58f32680a94ca05c5f1ac8ef81f1ec9e">lgLuces::nombre_luz</a></div><div class="ttdeci">Ogre::String nombre_luz</div><div class="ttdef"><b>Definition:</b> lgLuces.h:17</div></div>
+<div class="ttc" id="aclasslg_luces_html_a7eee8e0bc4a648b04110aa41bbcc0d53"><div class="ttname"><a href="classlg_luces.html#a7eee8e0bc4a648b04110aa41bbcc0d53">lgLuces::sm_luz</a></div><div class="ttdeci">Ogre::SceneManager * sm_luz</div><div class="ttdef"><b>Definition:</b> lgLuces.h:14</div></div>
+<div class="ttc" id="aclasslg_luces_html_aad80f8f3db01f02bb158eb3f6d332cca"><div class="ttname"><a href="classlg_luces.html#aad80f8f3db01f02bb158eb3f6d332cca">lgLuces::luzOgre</a></div><div class="ttdeci">Ogre::Light * luzOgre()</div></div>
+<div class="ttc" id="aclasslg_luces_html_ac4f3a265f7662a404275d92bef677cf1"><div class="ttname"><a href="classlg_luces.html#ac4f3a265f7662a404275d92bef677cf1">lgLuces::lgLuces</a></div><div class="ttdeci">lgLuces(Ogre::String nombre, int tipo)</div><div class="ttdef"><b>Definition:</b> lgLuces.h:6</div></div>
+<div class="ttc" id="aclasslg_luces_html_ac91657ca772919ef30685992587c62b6"><div class="ttname"><a href="classlg_luces.html#ac91657ca772919ef30685992587c62b6">lgLuces::luz</a></div><div class="ttdeci">Ogre::Light * luz</div><div class="ttdef"><b>Definition:</b> lgLuces.h:15</div></div>
+<div class="ttc" id="aclasslg_luces_html_acfa0c9aba9e7002bd5c6c2867b5ad0d0"><div class="ttname"><a href="classlg_luces.html#acfa0c9aba9e7002bd5c6c2867b5ad0d0">lgLuces::tipo_luz</a></div><div class="ttdeci">Ogre::String tipo_luz</div><div class="ttdef"><b>Definition:</b> lgLuces.h:18</div></div>
+<div class="ttc" id="aclasslg_luces_html_ad3e624ca58499beef8f2a4bc6429a0b5"><div class="ttname"><a href="classlg_luces.html#ad3e624ca58499beef8f2a4bc6429a0b5">lgLuces::setNombre</a></div><div class="ttdeci">void setNombre(Ogre::String nombre)</div></div>
+<div class="ttc" id="aclasslg_luces_html_ad4100394edf570ac59677700a118952a"><div class="ttname"><a href="classlg_luces.html#ad4100394edf570ac59677700a118952a">lgLuces::setTipo</a></div><div class="ttdeci">void setTipo(int tipo)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6309d378ceffb9970caf11a0592736.html">SDK</a></li><li class="navelem"><a class="el" href="dir_4fe8a5edf869208696d37e8a40956a24.html">include</a></li><li class="navelem"><a class="el" href="lg_luces_8h.html">lgLuces.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

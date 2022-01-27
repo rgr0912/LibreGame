@@ -1,0 +1,28 @@
+var classlg_s_d_l =
+[
+    [ "InputListenerList", "classlg_s_d_l.html#a6d15b2d3c1e17eea3a6bf392dcfc2118", null ],
+    [ "WindowList", "classlg_s_d_l.html#a538b71abb143d7b220090eb0b4ac66c3", null ],
+    [ "lgSDL", "classlg_s_d_l.html#a28a5b5fa9b6c8410b047b78bfaab765b", null ],
+    [ "_fireInputEvent", "classlg_s_d_l.html#ac84dce91d4388e0a3aef4559436bf6d1", null ],
+    [ "addInputListener", "classlg_s_d_l.html#aac359658f8bc6356efff3d2d6c601343", null ],
+    [ "addInputListener", "classlg_s_d_l.html#a4022ed2f5e5531287957c8ffb871d4a7", null ],
+    [ "crearVentana", "classlg_s_d_l.html#a7c24e3d780afa9d5354555b2e80901bd", null ],
+    [ "getRenderWindow", "classlg_s_d_l.html#ac7233019dd54d51d5d72eeae2c3fd7e2", null ],
+    [ "sdl_seleccion", "classlg_s_d_l.html#ae184a231710d65b217e91ac8e1830642", null ],
+    [ "sdlEventos", "classlg_s_d_l.html#a15d2980acca339bd4c0f07b8a0d47b7a", null ],
+    [ "sdlEventosAndroid", "classlg_s_d_l.html#af230b508b989795cc9570bc510ae7e1e", null ],
+    [ "windowResized", "classlg_s_d_l.html#ad1ea00bd9042a125fe2e80d84bd203a1", null ],
+    [ "h_a", "classlg_s_d_l.html#ad0a93799b35b3a6a3370fea2c6468778", null ],
+    [ "itr", "classlg_s_d_l.html#adc6aeaa56fe0c0c91c65d119cdb03967", null ],
+    [ "lgConfigAndroid", "classlg_s_d_l.html#a95ca7f5f94cc3a406dd4dec9a38a63b3", null ],
+    [ "lgManagerAndroid", "classlg_s_d_l.html#a833b9bee69604234d999e9c6587452be", null ],
+    [ "mInputListeners", "classlg_s_d_l.html#af398090eeae1fbf1d86039d2150011f3", null ],
+    [ "ogreWindow", "classlg_s_d_l.html#a9d75a3cf194692352b4fc57bd4b9a91c", null ],
+    [ "sdlImguiListener", "classlg_s_d_l.html#ad312be64c7c9e6ef718308bf301a4747", null ],
+    [ "sdlListenerChain", "classlg_s_d_l.html#a07b1a14b00c98b255a7d125ac51f941e", null ],
+    [ "sdlNodo", "classlg_s_d_l.html#a791cda3329b36bbee535e43d7ff59643", null ],
+    [ "sdlObjeto", "classlg_s_d_l.html#af44424243ec17e90ebed0a063de096e1", null ],
+    [ "tipo_ventana", "classlg_s_d_l.html#af7bc040ac1d61271aebfa97bf3e81edf", null ],
+    [ "ventana_lista", "classlg_s_d_l.html#a818cf3a49e62b55b33731d3add6d9072", null ],
+    [ "w_a", "classlg_s_d_l.html#a8c099398d94ef8aecf78c67a4e527dd5", null ]
+];

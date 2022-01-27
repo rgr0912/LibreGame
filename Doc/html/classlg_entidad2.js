@@ -1,0 +1,26 @@
+var classlg_entidad2 =
+[
+    [ "lgEntidad2", "classlg_entidad2.html#aeba017fef8e94ca091dc44e0a487aa69", null ],
+    [ "getBody", "classlg_entidad2.html#ac0e1f019b24b42ec3049094a8986607c", null ],
+    [ "getEntidad", "classlg_entidad2.html#a468a880f5a0d5783b55834079ea42a71", null ],
+    [ "lgBody", "classlg_entidad2.html#a061c37acc535231538b7175625c43c9c", null ],
+    [ "lgPlayer", "classlg_entidad2.html#a2c5f959d46d0c89f068ee02ac524d3bc", null ],
+    [ "mostrar", "classlg_entidad2.html#aa6da27078406a3e41efc660e578257d4", null ],
+    [ "setAnimacion", "classlg_entidad2.html#a1899b57287b0c2012e03b7506386c35b", null ],
+    [ "setAnimacionAlto", "classlg_entidad2.html#aa2562b81974f194f7cef31887429be33", null ],
+    [ "setDimensionesForma", "classlg_entidad2.html#aaedce354d3c7f67a4028e750e4b3d536", null ],
+    [ "setMesh", "classlg_entidad2.html#ab95a6ce075b7cd8cbd43c30bf324fd10", null ],
+    [ "setNombre", "classlg_entidad2.html#ac8deaaaa4f9f59890b12e41cf3ff59f5", null ],
+    [ "setPosicion", "classlg_entidad2.html#a7ddd50fb7df0f6f002869ffeb17c7634", null ],
+    [ "setTiempo", "classlg_entidad2.html#af54d668d145d310a4d5a5827a12f82fc", null ],
+    [ "setWord", "classlg_entidad2.html#a26794a4fa4dea9372bc9d3e2d7c41426", null ],
+    [ "body", "classlg_entidad2.html#ad9c2a4882cceecda3fa9238dfd95a6e2", null ],
+    [ "dimension_forma_cualision", "classlg_entidad2.html#adc722efa3184a1069650cbd72bad8e0b", null ],
+    [ "entidad", "classlg_entidad2.html#a22c14b86182be9e09ebc7d2a406b8678", null ],
+    [ "lgAnimacion2", "classlg_entidad2.html#a627123ffe8450135ac057340163ffebb", null ],
+    [ "lgElemento", "classlg_entidad2.html#af3bbb35c54270c03b9fba647747c8be5", null ],
+    [ "lgSm", "classlg_entidad2.html#a82172a372e7dc5fa26f41599b96719d8", null ],
+    [ "mesh_ent", "classlg_entidad2.html#ad2aec733bae8a0a962db9f65bbda7da8", null ],
+    [ "nombre_ent", "classlg_entidad2.html#a345e848095f3282521db700491e20dab", null ],
+    [ "posicion_ent", "classlg_entidad2.html#a0199195bcfab50d7944562d4dfdd1bc1", null ]
+];

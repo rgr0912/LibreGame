@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LibreGame: Fichero Fuente /home/rgr/LibreGame/SDK/include/lgBullet.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LibreGame
+   </div>
+   <div id="projectbrief">Game engine opersource</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('lg_bullet_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">lgBullet.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="lg_bullet_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">LibreGame es un proyecto que intenta crear un game engine a partir de librerias libres.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;btBulletDynamicsCommon.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;BulletDynamics/MLCPSolvers/btDantzigSolver.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;BulletDynamics/MLCPSolvers/btMLCPSolver.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;DebugDrawOgre.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;MotionStateOgre.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;BtOgreGP.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Ogre.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classlg_bullet.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlg_bullet.html">lgBullet</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a0c7d5a78c0196464d6b6d383e9bae751">   21</a></span>&#160;    <a class="code" href="classlg_bullet.html#a0c7d5a78c0196464d6b6d383e9bae751">lgBullet</a>(Ogre::SceneManager *sm);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//Configuracion de bullet desde aquí</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classlg_bullet.html#acbd7462e5e0f67c3ce33d6863b2e0c7e">   25</a></span>&#160;    btDynamicsWorld *<a class="code" href="classlg_bullet.html#acbd7462e5e0f67c3ce33d6863b2e0c7e">lgMundoDinamico</a>(Ogre::SceneManager *sm);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a9fc9bbabe677354f0f2abb350efc336b">   26</a></span>&#160;    btDynamicsWorld *<a class="code" href="classlg_bullet.html#a9fc9bbabe677354f0f2abb350efc336b">lgMundo</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a4f08ba582f1227fed34dca2df9e7ebae">   27</a></span>&#160;    btDefaultCollisionConfiguration *<a class="code" href="classlg_bullet.html#a4f08ba582f1227fed34dca2df9e7ebae">m_collisionConfiguration</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a9eb624f6ea9ebbc460918fcebb3d16ac">   28</a></span>&#160;    btCollisionDispatcher *<a class="code" href="classlg_bullet.html#a9eb624f6ea9ebbc460918fcebb3d16ac">m_dispatcher</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a3b5f5e4eb4788e91136cc54238cab8e2">   29</a></span>&#160;    btBroadphaseInterface *<a class="code" href="classlg_bullet.html#a3b5f5e4eb4788e91136cc54238cab8e2">m_overlappingPairCache</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a1306bfdcc2f807884369d51be859e01d">   30</a></span>&#160;    btConstraintSolver *<a class="code" href="classlg_bullet.html#a1306bfdcc2f807884369d51be859e01d">m_constraintSolver</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a410cc75a1564a8b389c091e757373ce2">   31</a></span>&#160;    btDiscreteDynamicsWorld *<a class="code" href="classlg_bullet.html#a410cc75a1564a8b389c091e757373ce2">m_dynamicsWorld</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a2f11f344edd09bc3e0ba74c0154a8e8d">   32</a></span>&#160;    btAlignedObjectArray&lt;btCollisionShape *&gt; <a class="code" href="classlg_bullet.html#a2f11f344edd09bc3e0ba74c0154a8e8d">m_collisionShapes</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//hasta aqui</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a94a58a5e549f6c52e2ddbbe8aced2760">   35</a></span>&#160;<span class="comment"></span>    brPhysicsDebugDrawer *<a class="code" href="classlg_bullet.html#a94a58a5e549f6c52e2ddbbe8aced2760">m_pPhysicDebugDraw</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ab3f72bcb10d45ebfe5fef2ed2e58b68a">   36</a></span>&#160;    BtOgre::StaticMeshToShapeConverter *<a class="code" href="classlg_bullet.html#ab3f72bcb10d45ebfe5fef2ed2e58b68a">staconv</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ad092631a6067e46ec27694f271466b7d">   38</a></span>&#160;    btRigidBody *<a class="code" href="classlg_bullet.html#ad092631a6067e46ec27694f271466b7d">bplayer</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a205579e940f5754000309cb46c4ac1f7">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classlg_bullet.html#a205579e940f5754000309cb46c4ac1f7">lgElementos</a> = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a62a506eda9687540bb49a46accc550f8">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#a62a506eda9687540bb49a46accc550f8">setlgElementos</a>(<span class="keywordtype">int</span> e);</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classlg_bullet.html#aaf9bcc5210401c7a0c1172effc51ac96">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classlg_bullet.html#aaf9bcc5210401c7a0c1172effc51ac96">getlgElementos</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ad2377decd8361faed4cf50a14d292d9c">   42</a></span>&#160;    BtOgre::DebugDrawer *<a class="code" href="classlg_bullet.html#ad2377decd8361faed4cf50a14d292d9c">dbdraw</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ae9ee80102148b273e3efdf0b50938d67">   43</a></span>&#160;    Ogre::SceneManager *<a class="code" href="classlg_bullet.html#ae9ee80102148b273e3efdf0b50938d67">lgSm</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a3c4b4c377f569f3a7f1e5c84dbf6cf8c">   44</a></span>&#160;    btScalar <a class="code" href="classlg_bullet.html#a3c4b4c377f569f3a7f1e5c84dbf6cf8c">m_defaultContactProcessingThreshold</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a212956ad82892f54bd35a7d11f0c1bff">   45</a></span>&#160;    Ogre::SceneNode *<a class="code" href="classlg_bullet.html#a212956ad82892f54bd35a7d11f0c1bff">lnode</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a2ad7017f3c75946dfe7cae3ba0efe7be">   46</a></span>&#160;    Ogre::String <a class="code" href="classlg_bullet.html#a2ad7017f3c75946dfe7cae3ba0efe7be">idNombre</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a720ab3d88e3d7b3a3c7ff90ef0f98c41">   47</a></span>&#160;    Ogre::SceneNode *<a class="code" href="classlg_bullet.html#a720ab3d88e3d7b3a3c7ff90ef0f98c41">bNode</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a143386d4c4deb445659ff6ddb0e3bb7f">   48</a></span>&#160;    Ogre::SceneNode *<a class="code" href="classlg_bullet.html#a143386d4c4deb445659ff6ddb0e3bb7f">colisionNode</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classlg_bullet.html#aff11bbe5f08f8060939e8755ec145148">   49</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#aff11bbe5f08f8060939e8755ec145148">draw</a>(Ogre::SceneManager *sceneMgr);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ad86e575d850c2bb4f3bd371a09cf57de">   50</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#ad86e575d850c2bb4f3bd371a09cf57de">physicsDebugDraw</a>(<span class="keywordtype">int</span> debugFlags);</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a10a882e4baf34c6ee059dbc397f00826">   51</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#a10a882e4baf34c6ee059dbc397f00826">caminar</a>(btRigidBody *body, <span class="keywordtype">int</span> velocidad);</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ad8db4f4a3f24fc20e9a4baa164e70359">   52</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#ad8db4f4a3f24fc20e9a4baa164e70359">rotar</a>(btRigidBody *body, btScalar velocidad);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a0bc88302b4aafa8cecf2ec85501fdeb5">   53</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#a0bc88302b4aafa8cecf2ec85501fdeb5">saltar</a>(btRigidBody *body, <span class="keywordtype">int</span> velocidad);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a4561dfdfc77c5644bf3386a7ef28cd29">   54</a></span>&#160;    btRigidBody *<a class="code" href="classlg_bullet.html#a4561dfdfc77c5644bf3386a7ef28cd29">plano</a>(Ogre::SceneNode *node, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keywordtype">double</span> dimension);</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classlg_bullet.html#aa957b9e9e96abbae35f282912abbcc8f">   55</a></span>&#160;    btRigidBody *<a class="code" href="classlg_bullet.html#aa957b9e9e96abbae35f282912abbcc8f">lgEntidad</a>(Ogre::String nombre, Ogre::String mesh, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classlg_bullet.html#ad77491429f87ce7f24ab9b690890b1cb">   56</a></span>&#160;    Ogre::Vector3 <a class="code" href="classlg_bullet.html#ad77491429f87ce7f24ab9b690890b1cb">setEscala</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classlg_bullet.html#af8b8575bf98c6c780ba921246fe486ce">   57</a></span>&#160;    Ogre::Vector3 <a class="code" href="classlg_bullet.html#af8b8575bf98c6c780ba921246fe486ce">getEscala</a>()</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classlg_bullet.html#ad77491429f87ce7f24ab9b690890b1cb">setEscala</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a7f593436a9dd958b33e2a415981f5cb3">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlg_bullet.html#a7f593436a9dd958b33e2a415981f5cb3">updateBody</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classlg_bullet.html#a067066cce1925e6373085949c1306fff">   62</a></span>&#160;    Ogre::String <a class="code" href="classlg_bullet.html#a067066cce1925e6373085949c1306fff">getColision</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="ttc" id="aclasslg_bullet_html"><div class="ttname"><a href="classlg_bullet.html">lgBullet</a></div><div class="ttdoc">LibreGame utiliza Bullet como motor de fisica para su simulacion,.</div><div class="ttdef"><b>Definition:</b> lgBullet.h:19</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a067066cce1925e6373085949c1306fff"><div class="ttname"><a href="classlg_bullet.html#a067066cce1925e6373085949c1306fff">lgBullet::getColision</a></div><div class="ttdeci">Ogre::String getColision</div><div class="ttdef"><b>Definition:</b> lgBullet.h:62</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a0bc88302b4aafa8cecf2ec85501fdeb5"><div class="ttname"><a href="classlg_bullet.html#a0bc88302b4aafa8cecf2ec85501fdeb5">lgBullet::saltar</a></div><div class="ttdeci">virtual void saltar(btRigidBody *body, int velocidad)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a0c7d5a78c0196464d6b6d383e9bae751"><div class="ttname"><a href="classlg_bullet.html#a0c7d5a78c0196464d6b6d383e9bae751">lgBullet::lgBullet</a></div><div class="ttdeci">lgBullet(Ogre::SceneManager *sm)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a10a882e4baf34c6ee059dbc397f00826"><div class="ttname"><a href="classlg_bullet.html#a10a882e4baf34c6ee059dbc397f00826">lgBullet::caminar</a></div><div class="ttdeci">virtual void caminar(btRigidBody *body, int velocidad)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a1306bfdcc2f807884369d51be859e01d"><div class="ttname"><a href="classlg_bullet.html#a1306bfdcc2f807884369d51be859e01d">lgBullet::m_constraintSolver</a></div><div class="ttdeci">btConstraintSolver * m_constraintSolver</div><div class="ttdef"><b>Definition:</b> lgBullet.h:30</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a143386d4c4deb445659ff6ddb0e3bb7f"><div class="ttname"><a href="classlg_bullet.html#a143386d4c4deb445659ff6ddb0e3bb7f">lgBullet::colisionNode</a></div><div class="ttdeci">Ogre::SceneNode * colisionNode</div><div class="ttdef"><b>Definition:</b> lgBullet.h:48</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a205579e940f5754000309cb46c4ac1f7"><div class="ttname"><a href="classlg_bullet.html#a205579e940f5754000309cb46c4ac1f7">lgBullet::lgElementos</a></div><div class="ttdeci">int lgElementos</div><div class="ttdef"><b>Definition:</b> lgBullet.h:39</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a212956ad82892f54bd35a7d11f0c1bff"><div class="ttname"><a href="classlg_bullet.html#a212956ad82892f54bd35a7d11f0c1bff">lgBullet::lnode</a></div><div class="ttdeci">Ogre::SceneNode * lnode</div><div class="ttdef"><b>Definition:</b> lgBullet.h:45</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a2ad7017f3c75946dfe7cae3ba0efe7be"><div class="ttname"><a href="classlg_bullet.html#a2ad7017f3c75946dfe7cae3ba0efe7be">lgBullet::idNombre</a></div><div class="ttdeci">Ogre::String idNombre</div><div class="ttdef"><b>Definition:</b> lgBullet.h:46</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a2f11f344edd09bc3e0ba74c0154a8e8d"><div class="ttname"><a href="classlg_bullet.html#a2f11f344edd09bc3e0ba74c0154a8e8d">lgBullet::m_collisionShapes</a></div><div class="ttdeci">btAlignedObjectArray&lt; btCollisionShape * &gt; m_collisionShapes</div><div class="ttdef"><b>Definition:</b> lgBullet.h:32</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a3b5f5e4eb4788e91136cc54238cab8e2"><div class="ttname"><a href="classlg_bullet.html#a3b5f5e4eb4788e91136cc54238cab8e2">lgBullet::m_overlappingPairCache</a></div><div class="ttdeci">btBroadphaseInterface * m_overlappingPairCache</div><div class="ttdef"><b>Definition:</b> lgBullet.h:29</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a3c4b4c377f569f3a7f1e5c84dbf6cf8c"><div class="ttname"><a href="classlg_bullet.html#a3c4b4c377f569f3a7f1e5c84dbf6cf8c">lgBullet::m_defaultContactProcessingThreshold</a></div><div class="ttdeci">btScalar m_defaultContactProcessingThreshold</div><div class="ttdef"><b>Definition:</b> lgBullet.h:44</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a410cc75a1564a8b389c091e757373ce2"><div class="ttname"><a href="classlg_bullet.html#a410cc75a1564a8b389c091e757373ce2">lgBullet::m_dynamicsWorld</a></div><div class="ttdeci">btDiscreteDynamicsWorld * m_dynamicsWorld</div><div class="ttdef"><b>Definition:</b> lgBullet.h:31</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a4561dfdfc77c5644bf3386a7ef28cd29"><div class="ttname"><a href="classlg_bullet.html#a4561dfdfc77c5644bf3386a7ef28cd29">lgBullet::plano</a></div><div class="ttdeci">btRigidBody * plano(Ogre::SceneNode *node, int x, int y, int z, double dimension)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a4f08ba582f1227fed34dca2df9e7ebae"><div class="ttname"><a href="classlg_bullet.html#a4f08ba582f1227fed34dca2df9e7ebae">lgBullet::m_collisionConfiguration</a></div><div class="ttdeci">btDefaultCollisionConfiguration * m_collisionConfiguration</div><div class="ttdef"><b>Definition:</b> lgBullet.h:27</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a62a506eda9687540bb49a46accc550f8"><div class="ttname"><a href="classlg_bullet.html#a62a506eda9687540bb49a46accc550f8">lgBullet::setlgElementos</a></div><div class="ttdeci">void setlgElementos(int e)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a720ab3d88e3d7b3a3c7ff90ef0f98c41"><div class="ttname"><a href="classlg_bullet.html#a720ab3d88e3d7b3a3c7ff90ef0f98c41">lgBullet::bNode</a></div><div class="ttdeci">Ogre::SceneNode * bNode</div><div class="ttdef"><b>Definition:</b> lgBullet.h:47</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a7f593436a9dd958b33e2a415981f5cb3"><div class="ttname"><a href="classlg_bullet.html#a7f593436a9dd958b33e2a415981f5cb3">lgBullet::updateBody</a></div><div class="ttdeci">void updateBody()</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a94a58a5e549f6c52e2ddbbe8aced2760"><div class="ttname"><a href="classlg_bullet.html#a94a58a5e549f6c52e2ddbbe8aced2760">lgBullet::m_pPhysicDebugDraw</a></div><div class="ttdeci">brPhysicsDebugDrawer * m_pPhysicDebugDraw</div><div class="ttdoc">Debug draw para ogre, se muestran las linea de dibujo de la formas.</div><div class="ttdef"><b>Definition:</b> lgBullet.h:35</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a9eb624f6ea9ebbc460918fcebb3d16ac"><div class="ttname"><a href="classlg_bullet.html#a9eb624f6ea9ebbc460918fcebb3d16ac">lgBullet::m_dispatcher</a></div><div class="ttdeci">btCollisionDispatcher * m_dispatcher</div><div class="ttdef"><b>Definition:</b> lgBullet.h:28</div></div>
+<div class="ttc" id="aclasslg_bullet_html_a9fc9bbabe677354f0f2abb350efc336b"><div class="ttname"><a href="classlg_bullet.html#a9fc9bbabe677354f0f2abb350efc336b">lgBullet::lgMundo</a></div><div class="ttdeci">btDynamicsWorld * lgMundo</div><div class="ttdef"><b>Definition:</b> lgBullet.h:26</div></div>
+<div class="ttc" id="aclasslg_bullet_html_aa957b9e9e96abbae35f282912abbcc8f"><div class="ttname"><a href="classlg_bullet.html#aa957b9e9e96abbae35f282912abbcc8f">lgBullet::lgEntidad</a></div><div class="ttdeci">btRigidBody * lgEntidad(Ogre::String nombre, Ogre::String mesh, int x, int y, int z)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_aaf9bcc5210401c7a0c1172effc51ac96"><div class="ttname"><a href="classlg_bullet.html#aaf9bcc5210401c7a0c1172effc51ac96">lgBullet::getlgElementos</a></div><div class="ttdeci">int getlgElementos()</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ab3f72bcb10d45ebfe5fef2ed2e58b68a"><div class="ttname"><a href="classlg_bullet.html#ab3f72bcb10d45ebfe5fef2ed2e58b68a">lgBullet::staconv</a></div><div class="ttdeci">BtOgre::StaticMeshToShapeConverter * staconv</div><div class="ttdef"><b>Definition:</b> lgBullet.h:36</div></div>
+<div class="ttc" id="aclasslg_bullet_html_acbd7462e5e0f67c3ce33d6863b2e0c7e"><div class="ttname"><a href="classlg_bullet.html#acbd7462e5e0f67c3ce33d6863b2e0c7e">lgBullet::lgMundoDinamico</a></div><div class="ttdeci">btDynamicsWorld * lgMundoDinamico(Ogre::SceneManager *sm)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ad092631a6067e46ec27694f271466b7d"><div class="ttname"><a href="classlg_bullet.html#ad092631a6067e46ec27694f271466b7d">lgBullet::bplayer</a></div><div class="ttdeci">btRigidBody * bplayer</div><div class="ttdoc">Esto crea un cuerpo dinamico en bullet, que se combina con un mesh de ogre.</div><div class="ttdef"><b>Definition:</b> lgBullet.h:38</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ad2377decd8361faed4cf50a14d292d9c"><div class="ttname"><a href="classlg_bullet.html#ad2377decd8361faed4cf50a14d292d9c">lgBullet::dbdraw</a></div><div class="ttdeci">BtOgre::DebugDrawer * dbdraw</div><div class="ttdef"><b>Definition:</b> lgBullet.h:42</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ad77491429f87ce7f24ab9b690890b1cb"><div class="ttname"><a href="classlg_bullet.html#ad77491429f87ce7f24ab9b690890b1cb">lgBullet::setEscala</a></div><div class="ttdeci">Ogre::Vector3 setEscala</div><div class="ttdef"><b>Definition:</b> lgBullet.h:56</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ad86e575d850c2bb4f3bd371a09cf57de"><div class="ttname"><a href="classlg_bullet.html#ad86e575d850c2bb4f3bd371a09cf57de">lgBullet::physicsDebugDraw</a></div><div class="ttdeci">virtual void physicsDebugDraw(int debugFlags)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ad8db4f4a3f24fc20e9a4baa164e70359"><div class="ttname"><a href="classlg_bullet.html#ad8db4f4a3f24fc20e9a4baa164e70359">lgBullet::rotar</a></div><div class="ttdeci">virtual void rotar(btRigidBody *body, btScalar velocidad)</div></div>
+<div class="ttc" id="aclasslg_bullet_html_ae9ee80102148b273e3efdf0b50938d67"><div class="ttname"><a href="classlg_bullet.html#ae9ee80102148b273e3efdf0b50938d67">lgBullet::lgSm</a></div><div class="ttdeci">Ogre::SceneManager * lgSm</div><div class="ttdef"><b>Definition:</b> lgBullet.h:43</div></div>
+<div class="ttc" id="aclasslg_bullet_html_af8b8575bf98c6c780ba921246fe486ce"><div class="ttname"><a href="classlg_bullet.html#af8b8575bf98c6c780ba921246fe486ce">lgBullet::getEscala</a></div><div class="ttdeci">Ogre::Vector3 getEscala()</div><div class="ttdef"><b>Definition:</b> lgBullet.h:57</div></div>
+<div class="ttc" id="aclasslg_bullet_html_aff11bbe5f08f8060939e8755ec145148"><div class="ttname"><a href="classlg_bullet.html#aff11bbe5f08f8060939e8755ec145148">lgBullet::draw</a></div><div class="ttdeci">virtual void draw(Ogre::SceneManager *sceneMgr)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6309d378ceffb9970caf11a0592736.html">SDK</a></li><li class="navelem"><a class="el" href="dir_4fe8a5edf869208696d37e8a40956a24.html">include</a></li><li class="navelem"><a class="el" href="lg_bullet_8h.html">lgBullet.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

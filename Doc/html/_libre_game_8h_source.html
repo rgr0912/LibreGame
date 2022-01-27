@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LibreGame: Fichero Fuente /home/rgr/LibreGame/SDK/include/LibreGame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LibreGame
+   </div>
+   <div id="projectbrief">Game engine opersource</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_libre_game_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">LibreGame.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_libre_game_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">--------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">LibreGame engine es un proyecto de software libre basado en difetentes librerias OpenSourcce</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">este puede ser utilizado siempre y cuando tenga en cuenta que es un proyecto en fase beta, y </span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">tiene diferentes carencias de programacion.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">Para mayor informacion poner se en contacto a travez de la pagina de descarga.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">--------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_ogre_8h.html">lgOgre.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_s_d_l_8h.html">lgSDL.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_i_m_g_u_i_8h.html">lgIMGUI.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_bullet_8h.html">lgBullet.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_entidad_8h.html">lgEntidad.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lg_luces_8h.html">lgLuces.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;oggsound/include/OgreOggSound.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;oggsound/include/OgreOggISound.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;android/configuration.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;android/asset_manager.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;android/native_window.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;android/input.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structentidad.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structentidad.html">entidad</a>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structentidad.html#a66d57518af710df2f88ace39882b7aa8">   29</a></span>&#160;    <a class="code" href="classlg_entidad2.html">lgEntidad2</a>* <a class="code" href="structentidad.html#a66d57518af710df2f88ace39882b7aa8">ent</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structluz.html">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structluz.html">luz</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structluz.html#a4beb48ea2478847386caddaf3dc2b022">   32</a></span>&#160;    <a class="code" href="classlg_luces.html">lgLuces</a>* <a class="code" href="structluz.html#a4beb48ea2478847386caddaf3dc2b022">l</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_libre_game.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_libre_game.html">LibreGame</a> : <span class="keyword">public</span> <a class="code" href="classlg_ogre.html">lgOgre</a>, <span class="keyword">public</span> <a class="code" href="classlg_s_d_l.html">lgSDL</a>, <span class="keyword">public</span> <a class="code" href="classlg_g_u_i.html">lgGUI</a>, <span class="keyword">public</span> <a class="code" href="classlg_bullet.html">lgBullet</a> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_libre_game.html#a315ba9dc4e28f1c15b378c2da78df044">   39</a></span>&#160;    <a class="code" href="class_libre_game.html#a315ba9dc4e28f1c15b378c2da78df044">LibreGame</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_libre_game.html#a46b00990fd06f3321056f9d12d78b095">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_libre_game.html#a46b00990fd06f3321056f9d12d78b095">initApp</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_libre_game.html#a49e4ab7d09b7e6e071cbc23a66b0abfe">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_libre_game.html#a49e4ab7d09b7e6e071cbc23a66b0abfe">initRender</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_libre_game.html#a6be32ac0af30c6517bcce3fadc185524">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_libre_game.html#a6be32ac0af30c6517bcce3fadc185524">captEvento</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_libre_game.html#a07f146cafd369ab08452498046f62371">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_libre_game.html#a07f146cafd369ab08452498046f62371">moverCamara</a>(Ogre::Real deltaYaw, Ogre::Real deltaPitch, Ogre::Real deltaZoom);</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_libre_game.html#a58337581e69a3bb5f77fc3e6d3fb2317">   44</a></span>&#160;    std::vector&lt;entidad&gt; <a class="code" href="class_libre_game.html#a58337581e69a3bb5f77fc3e6d3fb2317">lgEntidadv</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_libre_game.html#a16eb156d23dbcdd7f618903aa73fc566">   45</a></span>&#160;    std::vector&lt;luz&gt; <a class="code" href="class_libre_game.html#a16eb156d23dbcdd7f618903aa73fc566">lgLucesv</a>;  </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_libre_game.html#afab5940f9341a642240b1f68ef7575e1">   46</a></span>&#160;    Ogre::Real <a class="code" href="class_libre_game.html#afab5940f9341a642240b1f68ef7575e1">deltaT</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_libre_game.html#ad81b03a4e602d324175f832de6188297">   47</a></span>&#160;    Ogre::SceneNode *<a class="code" href="class_libre_game.html#ad81b03a4e602d324175f832de6188297">lgPlayer</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_libre_game.html#ad9b7cd2e3866b28321c3e1a2da6330ee">   48</a></span>&#160;    Ogre::Entity *<a class="code" href="class_libre_game.html#ad9b7cd2e3866b28321c3e1a2da6330ee">ePlayer</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_libre_game.html#a215a2ee032b4bcce475dee80e9ef3821">   49</a></span>&#160;    Ogre::AnimationState *<a class="code" href="class_libre_game.html#a215a2ee032b4bcce475dee80e9ef3821">lgAnimacion</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_libre_game.html#a0ee00b659994d9c168682cef39c5db63">   50</a></span>&#160;    Ogre::Vector3 <a class="code" href="class_libre_game.html#a0ee00b659994d9c168682cef39c5db63">mKeyDirection</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_libre_game.html#acff60e2ecbca4bb556dd33b35b255443">   51</a></span>&#160;    Ogre::Vector3 <a class="code" href="class_libre_game.html#acff60e2ecbca4bb556dd33b35b255443">mGoalDirection</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_libre_game.html#a421fbe743fbac649248747da23f0b3ba">   52</a></span>&#160;    Ogre::SceneNode *<a class="code" href="class_libre_game.html#a421fbe743fbac649248747da23f0b3ba">mCameraPivot</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_libre_game.html#a58ad5437289e67d73bb4c72f2890a58f">   53</a></span>&#160;    Ogre::SceneNode *<a class="code" href="class_libre_game.html#a58ad5437289e67d73bb4c72f2890a58f">mCameraGoal</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_libre_game.html#a0f977432be24579b161f44bfc7857045">   54</a></span>&#160;    Ogre::Real <a class="code" href="class_libre_game.html#a0f977432be24579b161f44bfc7857045">mPivotPitch</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_libre_game.html#af08ac93faceb05dbd6645423917e0437">   55</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_libre_game.html#af08ac93faceb05dbd6645423917e0437">p56</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_libre_game.html#ae1da4ac6b36870b8690e15082217b09c">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_libre_game.html#ae1da4ac6b36870b8690e15082217b09c">dx2</a> = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_libre_game.html#ab3244581d227be3f83549d2e33400e11">   57</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_libre_game.html#ab3244581d227be3f83549d2e33400e11">d</a> = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_libre_game.html#a0db4a9c2f6cb885a99ce8b9fa72b5852">   58</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_libre_game.html#a0db4a9c2f6cb885a99ce8b9fa72b5852">dy</a> = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_libre_game.html#a69beccdeb24793fa209baa27f72aa57f">   59</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_libre_game.html#a69beccdeb24793fa209baa27f72aa57f">dz</a> = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_libre_game.html#a70170f032e2a17902618e7048fe71b10">   60</a></span>&#160;    <a class="code" href="classlg_entidad2.html">lgEntidad2</a> *<a class="code" href="class_libre_game.html#a70170f032e2a17902618e7048fe71b10">ent2</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_libre_game.html#ac970491e2950e145bb0c0864436182c4">   61</a></span>&#160;    btRigidBody *<a class="code" href="class_libre_game.html#ac970491e2950e145bb0c0864436182c4">lMundo</a>(<span class="keyword">const</span> Ogre::String &amp;nombre, <span class="keyword">const</span> Ogre::String &amp;mesh, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keywordtype">double</span> tamano, <span class="keywordtype">int</span> escalar);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_libre_game.html#a7af27bdca90a451cae91f5e17a15b948">   63</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_libre_game.html#a7af27bdca90a451cae91f5e17a15b948">initAppAndroid</a>(AAssetManager *assetMgr, ANativeWindow *window){};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> frameStarted(<span class="keyword">const</span> Ogre::FrameEvent &amp;evt);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> preViewportUpdate(<span class="keyword">const</span> Ogre::RenderTargetViewportEvent &amp;evt);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> frameRenderingQueued(<span class="keyword">const</span> Ogre::FrameEvent &amp;evt);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mouseMoved(<span class="keyword">const</span> OgreBites::MouseMotionEvent &amp;evt);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mousePressed(<span class="keyword">const</span> OgreBites::MouseButtonEvent &amp;evt);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mouseReleased(<span class="keyword">const</span> OgreBites::MouseButtonEvent &amp;evt);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> touchMoved(<span class="keyword">const</span> OgreBites::TouchFingerEvent &amp;evt);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> touchPressed(<span class="keyword">const</span> OgreBites::TouchFingerEvent &amp;evt);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> touchReleased(<span class="keyword">const</span> OgreBites::TouchFingerEvent &amp;evt);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> keyPressed(<span class="keyword">const</span> OgreBites::KeyboardEvent&amp; evt);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> keyReleased(<span class="keyword">const</span> OgreBites::KeyboardEvent&amp; evt);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    OgreOggSound::OgreOggSoundManager *mSoundManager;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    OgreOggSound::OgreOggISound *sound;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> m_cam_interfaz;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> cargarEscena();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Ogre::SceneNode *pos_camara;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="ttc" id="aclass_libre_game_html"><div class="ttname"><a href="class_libre_game.html">LibreGame</a></div><div class="ttdef"><b>Definition:</b> LibreGame.h:36</div></div>
+<div class="ttc" id="aclass_libre_game_html_a07f146cafd369ab08452498046f62371"><div class="ttname"><a href="class_libre_game.html#a07f146cafd369ab08452498046f62371">LibreGame::moverCamara</a></div><div class="ttdeci">void moverCamara(Ogre::Real deltaYaw, Ogre::Real deltaPitch, Ogre::Real deltaZoom)</div></div>
+<div class="ttc" id="aclass_libre_game_html_a0db4a9c2f6cb885a99ce8b9fa72b5852"><div class="ttname"><a href="class_libre_game.html#a0db4a9c2f6cb885a99ce8b9fa72b5852">LibreGame::dy</a></div><div class="ttdeci">int dy</div><div class="ttdef"><b>Definition:</b> LibreGame.h:58</div></div>
+<div class="ttc" id="aclass_libre_game_html_a0ee00b659994d9c168682cef39c5db63"><div class="ttname"><a href="class_libre_game.html#a0ee00b659994d9c168682cef39c5db63">LibreGame::mKeyDirection</a></div><div class="ttdeci">Ogre::Vector3 mKeyDirection</div><div class="ttdef"><b>Definition:</b> LibreGame.h:50</div></div>
+<div class="ttc" id="aclass_libre_game_html_a0f977432be24579b161f44bfc7857045"><div class="ttname"><a href="class_libre_game.html#a0f977432be24579b161f44bfc7857045">LibreGame::mPivotPitch</a></div><div class="ttdeci">Ogre::Real mPivotPitch</div><div class="ttdef"><b>Definition:</b> LibreGame.h:54</div></div>
+<div class="ttc" id="aclass_libre_game_html_a16eb156d23dbcdd7f618903aa73fc566"><div class="ttname"><a href="class_libre_game.html#a16eb156d23dbcdd7f618903aa73fc566">LibreGame::lgLucesv</a></div><div class="ttdeci">std::vector&lt; luz &gt; lgLucesv</div><div class="ttdef"><b>Definition:</b> LibreGame.h:45</div></div>
+<div class="ttc" id="aclass_libre_game_html_a215a2ee032b4bcce475dee80e9ef3821"><div class="ttname"><a href="class_libre_game.html#a215a2ee032b4bcce475dee80e9ef3821">LibreGame::lgAnimacion</a></div><div class="ttdeci">Ogre::AnimationState * lgAnimacion</div><div class="ttdef"><b>Definition:</b> LibreGame.h:49</div></div>
+<div class="ttc" id="aclass_libre_game_html_a315ba9dc4e28f1c15b378c2da78df044"><div class="ttname"><a href="class_libre_game.html#a315ba9dc4e28f1c15b378c2da78df044">LibreGame::LibreGame</a></div><div class="ttdeci">LibreGame()</div></div>
+<div class="ttc" id="aclass_libre_game_html_a421fbe743fbac649248747da23f0b3ba"><div class="ttname"><a href="class_libre_game.html#a421fbe743fbac649248747da23f0b3ba">LibreGame::mCameraPivot</a></div><div class="ttdeci">Ogre::SceneNode * mCameraPivot</div><div class="ttdef"><b>Definition:</b> LibreGame.h:52</div></div>
+<div class="ttc" id="aclass_libre_game_html_a46b00990fd06f3321056f9d12d78b095"><div class="ttname"><a href="class_libre_game.html#a46b00990fd06f3321056f9d12d78b095">LibreGame::initApp</a></div><div class="ttdeci">void initApp()</div></div>
+<div class="ttc" id="aclass_libre_game_html_a49e4ab7d09b7e6e071cbc23a66b0abfe"><div class="ttname"><a href="class_libre_game.html#a49e4ab7d09b7e6e071cbc23a66b0abfe">LibreGame::initRender</a></div><div class="ttdeci">void initRender()</div></div>
+<div class="ttc" id="aclass_libre_game_html_a58337581e69a3bb5f77fc3e6d3fb2317"><div class="ttname"><a href="class_libre_game.html#a58337581e69a3bb5f77fc3e6d3fb2317">LibreGame::lgEntidadv</a></div><div class="ttdeci">std::vector&lt; entidad &gt; lgEntidadv</div><div class="ttdef"><b>Definition:</b> LibreGame.h:44</div></div>
+<div class="ttc" id="aclass_libre_game_html_a58ad5437289e67d73bb4c72f2890a58f"><div class="ttname"><a href="class_libre_game.html#a58ad5437289e67d73bb4c72f2890a58f">LibreGame::mCameraGoal</a></div><div class="ttdeci">Ogre::SceneNode * mCameraGoal</div><div class="ttdef"><b>Definition:</b> LibreGame.h:53</div></div>
+<div class="ttc" id="aclass_libre_game_html_a69beccdeb24793fa209baa27f72aa57f"><div class="ttname"><a href="class_libre_game.html#a69beccdeb24793fa209baa27f72aa57f">LibreGame::dz</a></div><div class="ttdeci">int dz</div><div class="ttdef"><b>Definition:</b> LibreGame.h:59</div></div>
+<div class="ttc" id="aclass_libre_game_html_a6be32ac0af30c6517bcce3fadc185524"><div class="ttname"><a href="class_libre_game.html#a6be32ac0af30c6517bcce3fadc185524">LibreGame::captEvento</a></div><div class="ttdeci">void captEvento()</div></div>
+<div class="ttc" id="aclass_libre_game_html_a70170f032e2a17902618e7048fe71b10"><div class="ttname"><a href="class_libre_game.html#a70170f032e2a17902618e7048fe71b10">LibreGame::ent2</a></div><div class="ttdeci">lgEntidad2 * ent2</div><div class="ttdef"><b>Definition:</b> LibreGame.h:60</div></div>
+<div class="ttc" id="aclass_libre_game_html_a7af27bdca90a451cae91f5e17a15b948"><div class="ttname"><a href="class_libre_game.html#a7af27bdca90a451cae91f5e17a15b948">LibreGame::initAppAndroid</a></div><div class="ttdeci">virtual void initAppAndroid(AAssetManager *assetMgr, ANativeWindow *window)</div><div class="ttdef"><b>Definition:</b> LibreGame.h:63</div></div>
+<div class="ttc" id="aclass_libre_game_html_ab3244581d227be3f83549d2e33400e11"><div class="ttname"><a href="class_libre_game.html#ab3244581d227be3f83549d2e33400e11">LibreGame::d</a></div><div class="ttdeci">int d</div><div class="ttdef"><b>Definition:</b> LibreGame.h:57</div></div>
+<div class="ttc" id="aclass_libre_game_html_ac970491e2950e145bb0c0864436182c4"><div class="ttname"><a href="class_libre_game.html#ac970491e2950e145bb0c0864436182c4">LibreGame::lMundo</a></div><div class="ttdeci">btRigidBody * lMundo(const Ogre::String &amp;nombre, const Ogre::String &amp;mesh, int x, int y, int z, double tamano, int escalar)</div></div>
+<div class="ttc" id="aclass_libre_game_html_acff60e2ecbca4bb556dd33b35b255443"><div class="ttname"><a href="class_libre_game.html#acff60e2ecbca4bb556dd33b35b255443">LibreGame::mGoalDirection</a></div><div class="ttdeci">Ogre::Vector3 mGoalDirection</div><div class="ttdef"><b>Definition:</b> LibreGame.h:51</div></div>
+<div class="ttc" id="aclass_libre_game_html_ad81b03a4e602d324175f832de6188297"><div class="ttname"><a href="class_libre_game.html#ad81b03a4e602d324175f832de6188297">LibreGame::lgPlayer</a></div><div class="ttdeci">Ogre::SceneNode * lgPlayer</div><div class="ttdef"><b>Definition:</b> LibreGame.h:47</div></div>
+<div class="ttc" id="aclass_libre_game_html_ad9b7cd2e3866b28321c3e1a2da6330ee"><div class="ttname"><a href="class_libre_game.html#ad9b7cd2e3866b28321c3e1a2da6330ee">LibreGame::ePlayer</a></div><div class="ttdeci">Ogre::Entity * ePlayer</div><div class="ttdef"><b>Definition:</b> LibreGame.h:48</div></div>
+<div class="ttc" id="aclass_libre_game_html_ae1da4ac6b36870b8690e15082217b09c"><div class="ttname"><a href="class_libre_game.html#ae1da4ac6b36870b8690e15082217b09c">LibreGame::dx2</a></div><div class="ttdeci">int dx2</div><div class="ttdef"><b>Definition:</b> LibreGame.h:56</div></div>
+<div class="ttc" id="aclass_libre_game_html_af08ac93faceb05dbd6645423917e0437"><div class="ttname"><a href="class_libre_game.html#af08ac93faceb05dbd6645423917e0437">LibreGame::p56</a></div><div class="ttdeci">bool p56</div><div class="ttdef"><b>Definition:</b> LibreGame.h:55</div></div>
+<div class="ttc" id="aclass_libre_game_html_afab5940f9341a642240b1f68ef7575e1"><div class="ttname"><a href="class_libre_game.html#afab5940f9341a642240b1f68ef7575e1">LibreGame::deltaT</a></div><div class="ttdeci">Ogre::Real deltaT</div><div class="ttdef"><b>Definition:</b> LibreGame.h:46</div></div>
+<div class="ttc" id="aclasslg_bullet_html"><div class="ttname"><a href="classlg_bullet.html">lgBullet</a></div><div class="ttdoc">LibreGame utiliza Bullet como motor de fisica para su simulacion,.</div><div class="ttdef"><b>Definition:</b> lgBullet.h:19</div></div>
+<div class="ttc" id="aclasslg_entidad2_html"><div class="ttname"><a href="classlg_entidad2.html">lgEntidad2</a></div><div class="ttdef"><b>Definition:</b> lgEntidad.h:13</div></div>
+<div class="ttc" id="aclasslg_g_u_i_html"><div class="ttname"><a href="classlg_g_u_i.html">lgGUI</a></div><div class="ttdef"><b>Definition:</b> lgIMGUI.h:18</div></div>
+<div class="ttc" id="aclasslg_luces_html"><div class="ttname"><a href="classlg_luces.html">lgLuces</a></div><div class="ttdef"><b>Definition:</b> lgLuces.h:4</div></div>
+<div class="ttc" id="aclasslg_ogre_html"><div class="ttname"><a href="classlg_ogre.html">lgOgre</a></div><div class="ttdoc">Esta clase se encargada del render utilizano la libreria de Ogre3d, La mayoria de las funciones son d...</div><div class="ttdef"><b>Definition:</b> lgOgre.h:37</div></div>
+<div class="ttc" id="aclasslg_s_d_l_html"><div class="ttname"><a href="classlg_s_d_l.html">lgSDL</a></div><div class="ttdoc">Implementacion de la libreria de SDL para la entrada de teclado y raton para el game engine,...</div><div class="ttdef"><b>Definition:</b> lgSDL.h:37</div></div>
+<div class="ttc" id="alg_bullet_8h_html"><div class="ttname"><a href="lg_bullet_8h.html">lgBullet.h</a></div></div>
+<div class="ttc" id="alg_entidad_8h_html"><div class="ttname"><a href="lg_entidad_8h.html">lgEntidad.h</a></div></div>
+<div class="ttc" id="alg_i_m_g_u_i_8h_html"><div class="ttname"><a href="lg_i_m_g_u_i_8h.html">lgIMGUI.h</a></div></div>
+<div class="ttc" id="alg_luces_8h_html"><div class="ttname"><a href="lg_luces_8h.html">lgLuces.h</a></div></div>
+<div class="ttc" id="alg_ogre_8h_html"><div class="ttname"><a href="lg_ogre_8h.html">lgOgre.h</a></div></div>
+<div class="ttc" id="alg_s_d_l_8h_html"><div class="ttname"><a href="lg_s_d_l_8h.html">lgSDL.h</a></div></div>
+<div class="ttc" id="astructentidad_html"><div class="ttname"><a href="structentidad.html">entidad</a></div><div class="ttdef"><b>Definition:</b> LibreGame.h:28</div></div>
+<div class="ttc" id="astructentidad_html_a66d57518af710df2f88ace39882b7aa8"><div class="ttname"><a href="structentidad.html#a66d57518af710df2f88ace39882b7aa8">entidad::ent</a></div><div class="ttdeci">lgEntidad2 * ent</div><div class="ttdef"><b>Definition:</b> LibreGame.h:29</div></div>
+<div class="ttc" id="astructluz_html"><div class="ttname"><a href="structluz.html">luz</a></div><div class="ttdef"><b>Definition:</b> LibreGame.h:31</div></div>
+<div class="ttc" id="astructluz_html_a4beb48ea2478847386caddaf3dc2b022"><div class="ttname"><a href="structluz.html#a4beb48ea2478847386caddaf3dc2b022">luz::l</a></div><div class="ttdeci">lgLuces * l</div><div class="ttdef"><b>Definition:</b> LibreGame.h:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6309d378ceffb9970caf11a0592736.html">SDK</a></li><li class="navelem"><a class="el" href="dir_4fe8a5edf869208696d37e8a40956a24.html">include</a></li><li class="navelem"><a class="el" href="_libre_game_8h.html">LibreGame.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,7 +1,5 @@
 .vscode
-Base/ogre-master
-Base/ogre-master.zip
-Base/imgui
+Base
 build
 android
 Base

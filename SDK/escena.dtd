@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT escena (entidad*)>
+<!ELEMENT entidad (mesh, posicion, escala)>
+<!ELEMENT mesh (#PCDATA)>
+<!ELEMENT posicion (#PCDATA)>
+<!ELEMENT escala (#PCDATA)>
+<!ATTLIST entidad id CDATA #REQUIRED nombre CDATA #REQUIRED>
+<!ATTLIST mesh ruta CDATA #REQUIRED>
+<!ATTLIST posicion x CDATA #REQUIRED y CDATA #REQUIRED z CDATA #REQUIRED>
+<!ATTLIST escala x CDATA #REQUIRED y CDATA #REQUIRED z CDATA #REQUIRED>
