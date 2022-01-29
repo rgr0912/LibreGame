@@ -10,6 +10,7 @@ Para mayor informacion poner se en contacto a travez de la pagina de descarga.
 
 #include "lgOgre.h"
 #include "lgSDL.h"
+#include "lgSDLmixer.h"
 #include "lgIMGUI.h"
 #include "lgBullet.h"
 #include "lgEntidad.h"
