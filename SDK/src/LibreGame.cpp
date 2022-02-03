@@ -30,11 +30,13 @@ LibreGame::LibreGame() : lgSDL(), lgBullet(lgManager)
 void LibreGame::initApp()
 {
     crearRoot();
-    if (!configuracion())
-        return;
-
-    lgRoot->initialise(false, "LibreGameEngine");
-
+    if (!configuracion()) return;   
+#if OGRE_PLATFORM != OGRE_PLATFORM_ANDROID
+    // if the context was reconfigured, set requested renderer
+    //lgRoot->setRenderSystem(lgRoot->getRenderSystemByName(mNextRenderer));
+#endif
+    lgRoot->initialise(false, "LibreGame");
+    
     crearVentana("LibreGameSDL", lgRoot);
     lgVentana = getRenderWindow();
 
@@ -104,7 +106,7 @@ void LibreGame::initApp()
     
 
     lgTmanager.reset(new OgreBites::TrayManager("SampleControls", lgVentana, this));
-    lgTmanager->showLogo(OgreBites::TL_TOPRIGHT);
+    //lgTmanager->showLogo(OgreBites::TL_TOPRIGHT);
 
     auto imguiOverlay = new Ogre::ImGuiOverlay();
     imguiOverlay->setZOrder(300);
@@ -144,16 +146,10 @@ void LibreGame::initApp()
     renderTexture->setFSAA(4,"FSAA");
     renderTexture->addListener(this);
 #endif
+    lgAudio audio;
+    audio.cargarAudio("/home/rgr/LibreGame/Media/fondo.wav");
+    audio.playAudio(0);
 
-   mSoundManager = OgreOggSound::OgreOggSoundManager::getSingletonPtr();
-    if (mSoundManager->init())
-    {
-        sound = 0;
-        sound = mSoundManager->createSound("MiPista", "fondo.ogg", true, true);
-        //if(sound){
-        //  sound->play();
-        //}
-    }
     lgEntidadv[0].ent->entidad->setCastShadows(false); 
     lgEntidadv[1].ent->entidad->setMaterialName("mate_piso"); 
     lgEntidadv[1].ent->entidad->setCastShadows(true);  

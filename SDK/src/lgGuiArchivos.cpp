@@ -39,9 +39,9 @@ void lgGUI::archivos(bool *p, Ogre::String extension, Ogre::SceneManager *sm)
             char label[128];
             if (p.path().extension() == "")
             {
-                sprintf(label, p.path().c_str(), p.path());
-                if (ImGui::Selectable(label, directorio_selecionado == p.path()))
-                    directorio_selecionado = p.path();
+                sprintf(label, p.path().c_str(), p.path().c_str());
+                if (ImGui::Selectable(label, directorio_selecionado == p.path().c_str()))
+                    directorio_selecionado = p.path().c_str();
             }
         }
         ImGui::EndChild();
@@ -59,15 +59,15 @@ void lgGUI::archivos(bool *p, Ogre::String extension, Ogre::SceneManager *sm)
             {
                 char label[128];
                 if (extension == ".material")
-                    sprintf(label, p.path().c_str(), p.path());
+                    sprintf(label, p.path().c_str(), p.path().c_str());
                 if (extension == ".mesh")
-                    sprintf(label, p.path().filename().c_str(), p.path().filename());
+                    sprintf(label, p.path().filename().c_str(), p.path().filename().c_str());
                 if (ImGui::Selectable(label, subdirectorio_seleccionado == p.path() | subdirectorio_seleccionado == p.path().filename()))
                 {
                     if (extension == ".material")
-                        subdirectorio_seleccionado = p.path();
+                        subdirectorio_seleccionado = p.path().c_str();
                     if (extension == ".mesh")
-                        subdirectorio_seleccionado = p.path().filename();
+                        subdirectorio_seleccionado = p.path().filename().c_str();
                     //archivo_seleccion = "";
                 }
                 else

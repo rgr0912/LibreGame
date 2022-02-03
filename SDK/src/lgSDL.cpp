@@ -40,11 +40,15 @@ ventanaNativapar lgSDL::crearVentana(const Ogre::String &name, Ogre::Root *root,
     int flags = p.useFullScreen ? SDL_WINDOW_FULLSCREEN : SDL_WINDOW_RESIZABLE;
     int d = Ogre::StringConverter::parseInt(miscParams["monitorIndex"], 1) - 1;
     tipo_ventana.ventana_nativa = SDL_CreateWindow(p.name.c_str(), SDL_WINDOWPOS_UNDEFINED_DISPLAY(d), SDL_WINDOWPOS_UNDEFINED_DISPLAY(d), p.width, p.height, flags);
+#if OGRE_PLATFORM != OGRE_PLATFORM_EMSCRIPTEN
     SDL_SysWMinfo wmInfo;
     SDL_VERSION(&wmInfo.version);
     SDL_GetWindowWMInfo(tipo_ventana.ventana_nativa, &wmInfo);
+#endif
+    p.miscParams["sdlwin"] = Ogre::StringConverter::toString(size_t(tipo_ventana.ventana_nativa));
+#if OGRE_PLATFORM == OGRE_PLATFORM_LINUX
     p.miscParams["parentWindowHandle"] = Ogre::StringConverter::toString(size_t(wmInfo.info.x11.window));
-
+#endif
     if (!ventana_lista.empty())
     {
         p.miscParams["currentGLContext"] = "true";

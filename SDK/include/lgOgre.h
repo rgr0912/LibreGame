@@ -24,7 +24,7 @@ LibreGame es un proyecto que intenta crear un game engine a partir de librerias 
 #include "OgreSGTechniqueResolverListener.h"
 #endif // INCLUDE_RTSHADER_SYSTEM
 
-#include "oggsound/include/OgreOggSoundPlugin.h"
+//#include "oggsound/include/OgreOggSoundPlugin.h"
 
 namespace Ogre
 {
@@ -65,7 +65,7 @@ public:
     Ogre::RTShader::ShaderGenerator *mShaderGenerator;
     OgreBites::SGTechniqueResolverListener *mMaterialMgrListener;
 #endif
-    OgreOggSound::OgreOggSoundPlugin *mplugins;
+    //OgreOggSound::OgreOggSoundPlugin *mplugins;
     Ogre::FileSystemLayer &getSistemaArchivos() { return *sistemaArchivos; }
     Ogre::OverlaySystem *lgOverlaySystem;
     Ogre::Root *getRoot() const

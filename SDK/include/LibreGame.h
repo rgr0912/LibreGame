@@ -18,7 +18,7 @@ Para mayor informacion poner se en contacto a travez de la pagina de descarga.
 
 #include "config.h"
 
-#include "oggsound/include/OgreOggSound.h"
+//#include "oggsound/include/OgreOggSound.h"
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
 #include <android/configuration.h>
@@ -81,8 +81,8 @@ private:
     virtual bool touchReleased(const OgreBites::TouchFingerEvent &evt);
     virtual bool keyPressed(const OgreBites::KeyboardEvent& evt);
     virtual bool keyReleased(const OgreBites::KeyboardEvent& evt);
-    OgreOggSound::OgreOggSoundManager *mSoundManager;
-    OgreOggSound::OgreOggISound *sound;
+    //OgreOggSound::OgreOggSoundManager *mSoundManager;
+    //OgreOggSound::OgreOggISound *sound;
     bool m_cam_interfaz;
     bool play;
     bool rotar_camara;

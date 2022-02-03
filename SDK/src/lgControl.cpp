@@ -2,8 +2,9 @@
 
 bool LibreGame::keyPressed(const OgreBites::KeyboardEvent &evt)
 {
-#if OGRE_PLATFORM != OGRE_PLATFORM_ANDROID
-#if EXPORTAR == 0
+#if OGRE_PLATFORM != OGRE_PLATFORM_ANDROID && OGRE_PLATFORM_EMSCRIPTEN
+#if OGRE_PLATFORM != OGRE_PLATFORM_EMSCRIPTEN
+#if EXPORTAR == 0 
     KeyCode key = evt.keysym.sym;
     if (key == SDLK_i)
     {
@@ -79,6 +80,7 @@ bool LibreGame::keyPressed(const OgreBites::KeyboardEvent &evt)
         }
     }
 #endif
+#endif 
 #endif
     return false;
 }

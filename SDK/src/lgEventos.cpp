@@ -119,11 +119,11 @@ bool LibreGame::frameRenderingQueued(const Ogre::FrameEvent &evt)
         dbdraw->setDebugMode(false);
         updateBody(total_body);
         lgMundo->stepSimulation(deltaT, 5);
-        sound->play();
+       // sound->play();
     }
     else
     {
-        mSoundManager->pauseAllSounds();
+       // mSoundManager->pauseAllSounds();
     }
     if (interfaz_gui == true)
     {
@@ -131,7 +131,7 @@ bool LibreGame::frameRenderingQueued(const Ogre::FrameEvent &evt)
     }
     m_dynamicsWorld->debugDrawWorld();
     dbdraw->step();
-    mSoundManager->update(evt.timeSinceLastFrame);
+    //mSoundManager->update(evt.timeSinceLastFrame);
 
     return true;
 }

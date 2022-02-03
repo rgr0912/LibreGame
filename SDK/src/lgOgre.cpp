@@ -1,4 +1,5 @@
 #include "lgOgre.h"
+#include <iostream>
 
 #define LIBREGAME_CONFIG_DIR "/home/rgr/LibreGame/Media/"
 #define LIBREGAME_MEDIA_DIR "/home/rgr/LibreGame/Media/"
@@ -33,21 +34,28 @@ void lgOgre::crearRoot()
         rutaPlugins = Ogre::FileSystemLayer::resolveBundlePath(LIBREGAME_CONFIG_DIR "/plugins.cfg");
     }
 #endif
-    lgRoot = OGRE_NEW Ogre::Root(rutaPlugins, sistemaArchivos->getWritablePath("ogre.cfg"), sistemaArchivos->getWritablePath("ogre.log"));
+    //lgRoot = OGRE_NEW Ogre::Root(rutaPlugins, sistemaArchivos->getWritablePath("ogre.cfg"), sistemaArchivos->getWritablePath("ogre.log"));
+    lgRoot = OGRE_NEW Ogre::Root("");
 #endif
 #ifdef OGRE_STATIC_LIB
-    mplugins = OGRE_NEW OgreOggSound::OgreOggSoundPlugin();
-    lgRoot->installPlugin(mplugins);
     lgStaticPluginLoader.load();
 #endif
     lgOverlaySystem = new Ogre::OverlaySystem();
 }
 bool lgOgre::configuracion()
 {
-    if (!lgRoot->restoreConfig())
+    
+    if(lgRoot->getAvailableRenderers().empty())
     {
-        lgRoot->showConfigDialog(OgreBites::getNativeConfigDialog());
+        Ogre::LogManager::getSingleton().logError("No RenderSystems available");
+        return false;
     }
-
+#if OGRE_PLATFORM == OGRE_PLATFORM_ANDROID
+    lgRoot->setRenderSystem(lgRoot->getAvailableRenderers().front());
+#else
+    if (!lgRoot->restoreConfig()) {
+        return lgRoot->showConfigDialog(OgreBites::getNativeConfigDialog());
+    }
+#endif
     return true;
 }
